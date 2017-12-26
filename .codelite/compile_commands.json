@@ -1,0 +1,5 @@
+[{
+  "directory": "/media/patrick/GamesDrive/PROGRAMMING/Projects/IGP2",
+  "command": "/usr/bin/g++ -c /media/patrick/GamesDrive/PROGRAMMING/Projects/IGP2/src/model/Model.cpp -g -O0 -Wall -DSFML_STATIC -o ./Debug/src_model_Model.cpp.o -I. -I. -I/usr/local/include",
+  "file": "/media/patrick/GamesDrive/PROGRAMMING/Projects/IGP2/src/model/Model.cpp"
+ }]

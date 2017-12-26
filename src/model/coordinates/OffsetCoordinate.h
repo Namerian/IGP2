@@ -5,23 +5,23 @@ namespace IGP2
 class OffsetCoordinate
 {
 public:
-    OffsetCoordinates(int pCol, int pRow)
+    inline OffsetCoordinate(int pCol, int pRow)
     {
         mCol = pCol;
         mRow = pRow;
     }
 
-    int GetCol()
+    inline int GetCol() const
     {
         return mCol;
     }
 
-    int GetRow()
+    inline int GetRow() const
     {
         return mRow;
     }
 
 private:
     int mCol, mRow;
-}
+};
 }

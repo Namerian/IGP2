@@ -24,6 +24,7 @@
         <File Name="src/model/coordinates/EdgeCoordinate.h"/>
         <File Name="src/model/coordinates/OffsetCoordinate.h"/>
         <File Name="src/model/coordinates/VerticeCoordinate.h"/>
+        <File Name="src/model/coordinates/Coordinates.h"/>
       </VirtualDirectory>
       <VirtualDirectory Name="enums">
         <File Name="src/model/enums/EdgeDirection.h"/>
@@ -37,7 +38,10 @@
         <File Name="src/model/map/Tile.cpp"/>
         <File Name="src/model/map/Vertice.h"/>
         <File Name="src/model/map/Vertice.cpp"/>
+        <File Name="src/model/map/Graph.h"/>
       </VirtualDirectory>
+      <File Name="src/model/Model.h"/>
+      <File Name="src/model/Model.cpp"/>
     </VirtualDirectory>
     <File Name="src/GameController.cpp"/>
     <File Name="src/GameController.h"/>
@@ -54,7 +58,7 @@
       <ResourceCompiler Options=""/>
     </GlobalSettings>
     <Configuration Name="Debug" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
-      <Compiler Options="-g;-O0;-Wall" C_Options="-g;-O0;-Wall" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+      <Compiler Options="-g;-O0;-std=c++14;-std=c++11;-Wall" C_Options="-g;-O0;-Wall" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
         <IncludePath Value="."/>
         <IncludePath Value="/usr/local/include"/>
         <Preprocessor Value="SFML_STATIC"/>

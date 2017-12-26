@@ -1,35 +1,37 @@
 #pragma once
 
+#include "src/model/enums/VerticeDirection.h"
+
 namespace IGP2
 {
 class VerticeCoordinate
 {
 public:
-    VerticeCoordinate(int pU, int pV, eVerticeDirection pD)
+    inline VerticeCoordinate(int pU, int pV, eVerticeDirection pD)
     {
         mU = pU;
         mV = pV;
         mD = pD;
     }
 
-    VerticeCoordinate(AxialCoordinate pCoord, eVerticeDirection pD)
+    inline VerticeCoordinate(const AxialCoordinate& pCoord, eVerticeDirection pD)
     {
         mU = pCoord.GetU();
         mV = pCoord.GetV();
         mD = pD;
     }
 
-    int GetU()
+    inline int GetU() const
     {
         return mU;
     }
 
-    int GetV()
+    inline int GetV() const
     {
         return mV;
     }
 
-    eVerticeDirection GetD()
+    inline eVerticeDirection GetD() const
     {
         return mD;
     }
@@ -37,5 +39,5 @@ public:
 private:
     int mU, mV;
     eVerticeDirection mD;
-}
+};
 }

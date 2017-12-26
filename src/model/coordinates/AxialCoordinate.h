@@ -6,18 +6,18 @@ namespace IGP2
 class AxialCoordinate
 {
 public:
-    AxialCoordinate(int pU, int pV)
+    inline AxialCoordinate(int pU, int pV)
     {
         mU = pU;
         mV = pV;
     }
 
-    int GetU()
+    inline int GetU() const
     {
         return mU;
     }
 
-    int GetV()
+    inline int GetV() const
     {
         return mV;
     }

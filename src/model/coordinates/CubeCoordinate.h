@@ -6,24 +6,24 @@ namespace IGP2
 class CubeCoordinate
 {
 public:
-    CubeCoordinate(int pX, int pY, int pZ)
+    inline CubeCoordinate(int pX, int pY, int pZ)
     {
         mX = pX;
         mY = pY;
         mZ = pZ;
     }
 
-    int GetX()
+    inline int GetX() const
     {
         return mX;
     }
 
-    int GetY()
+    inline int GetY() const
     {
         return mY;
     }
 
-    int GetZ()
+    inline int GetZ() const
     {
         return mZ;
     }

@@ -1,5 +1,7 @@
 #pragma once
 
+#include "src/model/enums/EdgeDirection.h"
+
 namespace IGP2
 {
 /// Position of an hexagon edge.
@@ -7,31 +9,31 @@ namespace IGP2
 class EdgeCoordinate
 {
 public:
-    EdgeCoordinate(int pU, int pV, eEdgeDirection pD)
+    inline EdgeCoordinate(int pU, int pV, eEdgeDirection pD)
     {
         mU = pU;
         mV = pV;
         mD = pD;
     }
 
-    EdgeCoordinate(AxialCoordinate pCoord, eEdgeDirection pD)
+    inline EdgeCoordinate(const AxialCoordinate& pCoord, eEdgeDirection pD)
     {
         mU = pCoord.GetU();
         mV = pCoord.GetV();
         mD = pD;
     }
 
-    int GetU()
+    inline int GetU() const
     {
         return mU;
     }
 
-    int GetV()
+    inline int GetV() const
     {
-        return pV;
+        return mV;
     }
 
-    eEdgeDirection GetD()
+    inline eEdgeDirection GetD() const
     {
         return mD;
     }

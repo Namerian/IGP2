@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Patrick Monville
-Date                   :=25/12/17
+Date                   :=26/12/17
 CodeLitePath           :=/home/patrick/.codelite
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
@@ -50,7 +50,7 @@ LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)/usr/local/l
 AR       := /usr/bin/ar rcu
 CXX      := /usr/bin/g++
 CC       := /usr/bin/gcc
-CXXFLAGS :=  -g -O0 -Wall $(Preprocessors)
+CXXFLAGS :=  -g -O0 -std=c++14 -std=c++11 -Wall $(Preprocessors)
 CFLAGS   :=  -g -O0 -Wall $(Preprocessors)
 ASFLAGS  := 
 AS       := /usr/bin/as
@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_GameController.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/src_GameController.cpp$(ObjectSuffix) $(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_model_Model.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_model_map_Edge.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_model_map_Tile.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_model_map_Vertice.cpp$(ObjectSuffix) 
 
 
 
@@ -91,6 +91,14 @@ PreBuild:
 ##
 ## Objects
 ##
+$(IntermediateDirectory)/src_GameController.cpp$(ObjectSuffix): src/GameController.cpp $(IntermediateDirectory)/src_GameController.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/media/patrick/GamesDrive/PROGRAMMING/Projects/IGP2/src/GameController.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_GameController.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_GameController.cpp$(DependSuffix): src/GameController.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_GameController.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_GameController.cpp$(DependSuffix) -MM src/GameController.cpp
+
+$(IntermediateDirectory)/src_GameController.cpp$(PreprocessSuffix): src/GameController.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_GameController.cpp$(PreprocessSuffix) src/GameController.cpp
+
 $(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/media/patrick/GamesDrive/PROGRAMMING/Projects/IGP2/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
@@ -99,13 +107,37 @@ $(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
 $(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
 
-$(IntermediateDirectory)/src_GameController.cpp$(ObjectSuffix): src/GameController.cpp $(IntermediateDirectory)/src_GameController.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/media/patrick/GamesDrive/PROGRAMMING/Projects/IGP2/src/GameController.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_GameController.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/src_GameController.cpp$(DependSuffix): src/GameController.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_GameController.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_GameController.cpp$(DependSuffix) -MM src/GameController.cpp
+$(IntermediateDirectory)/src_model_Model.cpp$(ObjectSuffix): src/model/Model.cpp $(IntermediateDirectory)/src_model_Model.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/media/patrick/GamesDrive/PROGRAMMING/Projects/IGP2/src/model/Model.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_model_Model.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_model_Model.cpp$(DependSuffix): src/model/Model.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_model_Model.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_model_Model.cpp$(DependSuffix) -MM src/model/Model.cpp
 
-$(IntermediateDirectory)/src_GameController.cpp$(PreprocessSuffix): src/GameController.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_GameController.cpp$(PreprocessSuffix) src/GameController.cpp
+$(IntermediateDirectory)/src_model_Model.cpp$(PreprocessSuffix): src/model/Model.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_model_Model.cpp$(PreprocessSuffix) src/model/Model.cpp
+
+$(IntermediateDirectory)/src_model_map_Edge.cpp$(ObjectSuffix): src/model/map/Edge.cpp $(IntermediateDirectory)/src_model_map_Edge.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/media/patrick/GamesDrive/PROGRAMMING/Projects/IGP2/src/model/map/Edge.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_model_map_Edge.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_model_map_Edge.cpp$(DependSuffix): src/model/map/Edge.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_model_map_Edge.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_model_map_Edge.cpp$(DependSuffix) -MM src/model/map/Edge.cpp
+
+$(IntermediateDirectory)/src_model_map_Edge.cpp$(PreprocessSuffix): src/model/map/Edge.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_model_map_Edge.cpp$(PreprocessSuffix) src/model/map/Edge.cpp
+
+$(IntermediateDirectory)/src_model_map_Tile.cpp$(ObjectSuffix): src/model/map/Tile.cpp $(IntermediateDirectory)/src_model_map_Tile.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/media/patrick/GamesDrive/PROGRAMMING/Projects/IGP2/src/model/map/Tile.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_model_map_Tile.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_model_map_Tile.cpp$(DependSuffix): src/model/map/Tile.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_model_map_Tile.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_model_map_Tile.cpp$(DependSuffix) -MM src/model/map/Tile.cpp
+
+$(IntermediateDirectory)/src_model_map_Tile.cpp$(PreprocessSuffix): src/model/map/Tile.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_model_map_Tile.cpp$(PreprocessSuffix) src/model/map/Tile.cpp
+
+$(IntermediateDirectory)/src_model_map_Vertice.cpp$(ObjectSuffix): src/model/map/Vertice.cpp $(IntermediateDirectory)/src_model_map_Vertice.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/media/patrick/GamesDrive/PROGRAMMING/Projects/IGP2/src/model/map/Vertice.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_model_map_Vertice.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_model_map_Vertice.cpp$(DependSuffix): src/model/map/Vertice.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_model_map_Vertice.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_model_map_Vertice.cpp$(DependSuffix) -MM src/model/map/Vertice.cpp
+
+$(IntermediateDirectory)/src_model_map_Vertice.cpp$(PreprocessSuffix): src/model/map/Vertice.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_model_map_Vertice.cpp$(PreprocessSuffix) src/model/map/Vertice.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
