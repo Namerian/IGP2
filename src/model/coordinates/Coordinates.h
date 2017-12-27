@@ -2,9 +2,9 @@
 
 #include <SFML/System.hpp>
 
-#include "src/model/enums/EdgeDirection.h"
-#include "src/model/enums/HexDirection.h"
-#include "src/model/enums/VerticeDirection.h"
+#include "EdgeDirection.h"
+#include "HexDirection.h"
+#include "VerticeDirection.h"
 
 #include "AxialCoordinate.h"
 #include "CubeCoordinate.h"
@@ -87,7 +87,7 @@ namespace Coordinates
         return result;
     }
 
-    inline sf::Vector2f VerticeToPixel(const VerticeCoordinate& pVertice)
+    inline sf::Vector2f VertexToPixel(const VerticeCoordinate& pVertice)
     {
         sf::Vector2f result = (float)pVertice.GetU() * GetAxisU() + (float)pVertice.GetV() * GetAxisV();
         eVerticeDirection dir = pVertice.GetD();

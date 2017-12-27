@@ -25,27 +25,32 @@
         <File Name="src/model/coordinates/OffsetCoordinate.h"/>
         <File Name="src/model/coordinates/VerticeCoordinate.h"/>
         <File Name="src/model/coordinates/Coordinates.h"/>
-      </VirtualDirectory>
-      <VirtualDirectory Name="enums">
-        <File Name="src/model/enums/EdgeDirection.h"/>
-        <File Name="src/model/enums/HexDirection.h"/>
-        <File Name="src/model/enums/VerticeDirection.h"/>
-      </VirtualDirectory>
-      <VirtualDirectory Name="map">
-        <File Name="src/model/map/Edge.h"/>
-        <File Name="src/model/map/Edge.cpp"/>
-        <File Name="src/model/map/Tile.h"/>
-        <File Name="src/model/map/Tile.cpp"/>
-        <File Name="src/model/map/Vertice.h"/>
-        <File Name="src/model/map/Vertice.cpp"/>
-        <File Name="src/model/map/Graph.h"/>
+        <File Name="src/model/coordinates/EdgeDirection.h"/>
+        <File Name="src/model/coordinates/HexDirection.h"/>
+        <File Name="src/model/coordinates/VerticeDirection.h"/>
       </VirtualDirectory>
       <File Name="src/model/Model.h"/>
       <File Name="src/model/Model.cpp"/>
+      <VirtualDirectory Name="graph">
+        <File Name="src/model/graph/Edge.cpp"/>
+        <File Name="src/model/graph/Edge.h"/>
+        <File Name="src/model/graph/Graph.h"/>
+        <File Name="src/model/graph/Tile.cpp"/>
+        <File Name="src/model/graph/Tile.h"/>
+        <File Name="src/model/graph/Vertice.cpp"/>
+        <File Name="src/model/graph/Vertice.h"/>
+      </VirtualDirectory>
     </VirtualDirectory>
     <File Name="src/GameController.cpp"/>
     <File Name="src/GameController.h"/>
     <File Name="main.cpp"/>
+    <VirtualDirectory Name="view">
+      <File Name="src/view/MapView.h"/>
+      <File Name="src/view/MapView.cpp"/>
+      <File Name="src/view/GridView.h"/>
+      <File Name="src/view/GridView.cpp"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="control"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>

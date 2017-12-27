@@ -1,22 +1,19 @@
 #include "GameController.h"
 
-namespace IGP2
-{
-GameController::GameController()
+IGP2::GameController::GameController()
 {
     // ctor
 }
 
-GameController::~GameController()
+IGP2::GameController::~GameController()
 {
     // dtor
 }
 
-void GameController::update(float pDeltaTime)
+void IGP2::GameController::update(float pDeltaTime)
 {
 }
 
-void GameController::draw(sf::RenderWindow* pWindow)
+void IGP2::GameController::draw(sf::RenderWindow* pWindow)
 {
-}
 }

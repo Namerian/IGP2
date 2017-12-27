@@ -2,26 +2,29 @@
 
 namespace IGP2
 {
-class OffsetCoordinate
+namespace Coordinates
 {
-public:
-    inline OffsetCoordinate(int pCol, int pRow)
+    class OffsetCoordinate
     {
-        mCol = pCol;
-        mRow = pRow;
-    }
+    public:
+        inline OffsetCoordinate(int pCol, int pRow)
+        {
+            mCol = pCol;
+            mRow = pRow;
+        }
 
-    inline int GetCol() const
-    {
-        return mCol;
-    }
+        inline int GetCol() const
+        {
+            return mCol;
+        }
 
-    inline int GetRow() const
-    {
-        return mRow;
-    }
+        inline int GetRow() const
+        {
+            return mRow;
+        }
 
-private:
-    int mCol, mRow;
-};
+    private:
+        int mCol, mRow;
+    };
+}
 }

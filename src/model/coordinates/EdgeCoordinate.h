@@ -1,45 +1,72 @@
 #pragma once
 
-#include "src/model/enums/EdgeDirection.h"
+#include "EdgeDirection.h"
 
 namespace IGP2
 {
-/// Position of an hexagon edge.
-/// U and V are the axial coordinates of a hexagon.
-class EdgeCoordinate
+namespace Coordinates
 {
-public:
-    inline EdgeCoordinate(int pU, int pV, eEdgeDirection pD)
-    {
-        mU = pU;
-        mV = pV;
-        mD = pD;
-    }
+    /// Position of an hexagon edge.
 
-    inline EdgeCoordinate(const AxialCoordinate& pCoord, eEdgeDirection pD)
+    /// U and V are the axial coordinates of a hexagon.
+    class EdgeCoordinate
     {
-        mU = pCoord.GetU();
-        mV = pCoord.GetV();
-        mD = pD;
-    }
+    public:
+        inline EdgeCoordinate(int pU, int pV, eEdgeDirection pD)
+        {
+            mU = pU;
+            mV = pV;
+            mD = pD;
+        }
 
-    inline int GetU() const
-    {
-        return mU;
-    }
+        inline EdgeCoordinate(const AxialCoordinate& pCoord, eEdgeDirection pD)
+        {
+            mU = pCoord.GetU();
+            mV = pCoord.GetV();
+            mD = pD;
+        }
 
-    inline int GetV() const
-    {
-        return mV;
-    }
+        inline int GetU() const
+        {
+            return mU;
+        }
 
-    inline eEdgeDirection GetD() const
-    {
-        return mD;
-    }
+        inline int GetV() const
+        {
+            return mV;
+        }
 
-private:
-    int mU, mV;
-    eEdgeDirection mD;
-};
+        inline eEdgeDirection GetD() const
+        {
+            return mD;
+        }
+
+        inline bool operator==(const EdgeCoordinate& other) const
+        {
+            return (mU == other.GetU() && mV == other.GetV() && mD == other.GetD());
+        }
+
+        inline bool operator!=(const EdgeCoordinate& other) const
+        {
+            return !(*this == other);
+        }
+
+    private:
+        int mU, mV;
+        eEdgeDirection mD;
+    };
+
+    struct EdgeCoordinateComp {
+        bool operator()(const EdgeCoordinate& lhs, const EdgeCoordinate& rhs) const
+        {
+            if(lhs.GetU() < rhs.GetU()) {
+                return true;
+            } else if(lhs.GetU() == rhs.GetU() && (lhs.GetV() < rhs.GetV() || (int)lhs.GetD() < (int)rhs.GetD())) {
+                return true;
+            }
+
+            return false;
+        }
+    };
+}
 }

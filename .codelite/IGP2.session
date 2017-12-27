@@ -1,40 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Session Name="/media/patrick/GamesDrive/PROGRAMMING/Projects/IGP2/IGP2.workspace">
-  <int Value="1" Name="m_selectedTab"/>
+  <int Value="2" Name="m_selectedTab"/>
   <wxString Value="/media/patrick/GamesDrive/PROGRAMMING/Projects/IGP2/IGP2.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
-      <wxString Value="/media/patrick/GamesDrive/PROGRAMMING/Projects/IGP2/src/model/map/Graph.h" Name="FileName"/>
+      <wxString Value="/media/patrick/GamesDrive/PROGRAMMING/Projects/IGP2/src/view/GridView.h" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="38" Name="CurrentLine"/>
+      <int Value="18" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="/media/patrick/GamesDrive/PROGRAMMING/Projects/IGP2/src/model/coordinates/Coordinates.h" Name="FileName"/>
-      <int Value="51" Name="FirstVisibleLine"/>
+      <wxString Value="/media/patrick/GamesDrive/PROGRAMMING/Projects/IGP2/src/view/GridView.cpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="3" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/media/patrick/GamesDrive/PROGRAMMING/Projects/IGP2/src/model/Model.h" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="26" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/media/patrick/GamesDrive/PROGRAMMING/Projects/IGP2/src/model/Model.cpp" Name="FileName"/>
+      <int Value="3" Name="FirstVisibleLine"/>
       <int Value="17" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="/media/patrick/GamesDrive/PROGRAMMING/Projects/IGP2/src/model/coordinates/EdgeCoordinate.h" Name="FileName"/>
+      <int Value="13" Name="FirstVisibleLine"/>
+      <int Value="59" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/media/patrick/GamesDrive/PROGRAMMING/Projects/IGP2/src/model/coordinates/AxialCoordinate.h" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="32" Name="CurrentLine"/>
+      <int Value="51" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="/media/patrick/GamesDrive/PROGRAMMING/Projects/IGP2/src/model/coordinates/VerticeCoordinate.h" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="34" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="/media/patrick/GamesDrive/PROGRAMMING/Projects/IGP2/src/model/enums/HexDirection.h" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
+      <int Value="15" Name="FirstVisibleLine"/>
+      <int Value="66" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
