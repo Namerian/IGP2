@@ -1,10 +1,25 @@
 #include "MapView.h"
 
-MapView::MapView()
+namespace IGP2
 {
-}
-
-MapView::~MapView()
+namespace View
 {
-}
+    MapView::MapView()
+    {
+    }
 
+    MapView::~MapView()
+    {
+    }
+
+    void MapView::initialize(const Model& pModel)
+    {
+        mGridView.initialize(pModel);
+    }
+
+    void MapView::draw(sf::RenderWindow& pRenderWindow)
+    {
+        mGridView.draw(pRenderWindow);
+    }
+}
+}

@@ -10,7 +10,7 @@ Model::Model()
 
     for(int u = -mapRadius; u <= mapRadius; u++) {
         int v1 = std::max(-mapRadius, u - mapRadius);
-        int v2 = std::max(mapRadius, u + mapRadius);
+        int v2 = std::min(mapRadius, u + mapRadius);
 
         for(int v = v1; v <= v2; v++) {
             Coordinates::AxialCoordinate tileCoord(u, v);

@@ -18,7 +18,7 @@ namespace Coordinates
 {
     //***************************************
 
-    const float HEX_WIDTH = 2.0f;
+    const float HEX_WIDTH = 64.0f;
     const float HEX_SIZE = HEX_WIDTH * 0.5f;
     const float HEX_HEIGHT = 0.866025404f /* hardcoded sqrt(3)/2 */ * HEX_WIDTH;
 

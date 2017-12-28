@@ -13,9 +13,10 @@ namespace View
     class GridView
     {
     public:
-        GridView(const Model& pModel);
+        GridView();
         ~GridView();
 
+        void initialize(const Model& pModel);
         void draw(sf::RenderWindow& pRenderWindow);
 
     private:

@@ -6,7 +6,7 @@ using namespace IGP2;
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(800, 600), "SFML works!", sf::Style::Default);
+    sf::RenderWindow window(sf::VideoMode(1024, 800), "SFML works!", sf::Style::Default);
     window.setVerticalSyncEnabled(true);
 
     IGP2::GameController gameController;
@@ -28,7 +28,7 @@ int main()
         // rendering
         window.clear();
 
-        gameController.draw(&window);
+        gameController.draw(window);
 
         window.display();
     }
