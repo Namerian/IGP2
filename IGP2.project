@@ -4,6 +4,18 @@
     <Plugin Name="qmake">
       <![CDATA[00010001N0005Debug000000000000]]>
     </Plugin>
+    <Plugin Name="CMakePlugin">
+      <![CDATA[[{
+  "name": "Debug",
+  "enabled": false,
+  "buildDirectory": "build",
+  "sourceDirectory": "$(ProjectPath)",
+  "generator": "",
+  "buildType": "",
+  "arguments": [],
+  "parentProject": ""
+ }]]]>
+    </Plugin>
   </Plugins>
   <Reconciliation>
     <Regexes/>
@@ -40,6 +52,9 @@
         <File Name="src/model/graph/Vertice.cpp"/>
         <File Name="src/model/graph/Vertice.h"/>
       </VirtualDirectory>
+      <File Name="src/model/Resource.h"/>
+      <File Name="src/model/Resource.cpp"/>
+      <File Name="src/model/ResourceType.h"/>
     </VirtualDirectory>
     <File Name="src/GameController.cpp"/>
     <File Name="src/GameController.h"/>
@@ -65,8 +80,8 @@
     <Configuration Name="Debug" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
       <Compiler Options="-g;-O0;-std=c++14;-std=c++11;-Wall" C_Options="-g;-O0;-Wall" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
         <IncludePath Value="."/>
-        <IncludePath Value="/usr/local/include"/>
         <IncludePath Value="/usr/include"/>
+        <IncludePath Value="/usr/local/include"/>
         <Preprocessor Value="SFML_STATIC"/>
       </Compiler>
       <Linker Options="" Required="yes">

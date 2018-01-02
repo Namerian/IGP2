@@ -35,7 +35,7 @@ void GameController::update(float pDeltaTime)
     }
 
     cameraMovement.normalize();
-    cameraMovement *= 3;
+    cameraMovement *= 64 * pDeltaTime;
 
     sf::Vector2f oldPos = mCameraView.getCenter();
     mCameraView.setCenter(oldPos.x + cameraMovement.x(), oldPos.y + cameraMovement.y());

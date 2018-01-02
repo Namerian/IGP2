@@ -8,6 +8,7 @@ Model::Model()
 {
     int mapRadius = 10;
 
+    //creating graph
     for(int u = -mapRadius; u <= mapRadius; u++) {
         int v1 = std::max(-mapRadius, u - mapRadius);
         int v2 = std::min(mapRadius, u + mapRadius);
@@ -50,6 +51,10 @@ Model::Model()
             }
         }
     }
+
+    //
+    CreateResource(Coordinates::AxialCoordinate(0,0), eResourceType::IRON, 15000);
+    CreateResource(Coordinates::AxialCoordinate(5,4), eResourceType::COAL, 15000);
 }
 
 Model::~Model()
@@ -62,4 +67,12 @@ std::vector<Coordinates::EdgeCoordinate> Model::GetEdgePositions() const
     std::copy(mEdgeCoordSet.begin(), mEdgeCoordSet.end(), std::back_inserter(result));
     return result;
 }
+
+void Model::CreateResource(const Coordinates::AxialCoordinate& pPosition, eResourceType pType, int pAmount)
+{
+    mResources.push_back(Resource(pPosition, pType, pAmount));
+
+    mTileMap[pPosition].AddResource(&mResources[mResources.size()-1]);
+}
+
 }
