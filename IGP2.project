@@ -43,29 +43,45 @@
       </VirtualDirectory>
       <File Name="src/model/Model.h"/>
       <File Name="src/model/Model.cpp"/>
-      <VirtualDirectory Name="graph">
-        <File Name="src/model/graph/Edge.cpp"/>
-        <File Name="src/model/graph/Edge.h"/>
-        <File Name="src/model/graph/Graph.h"/>
-        <File Name="src/model/graph/Tile.cpp"/>
-        <File Name="src/model/graph/Tile.h"/>
-        <File Name="src/model/graph/Vertice.cpp"/>
-        <File Name="src/model/graph/Vertice.h"/>
-      </VirtualDirectory>
       <File Name="src/model/Resource.h"/>
       <File Name="src/model/Resource.cpp"/>
       <File Name="src/model/ResourceType.h"/>
+      <File Name="src/model/Edge.cpp"/>
+      <File Name="src/model/Edge.h"/>
+      <File Name="src/model/Graph.h"/>
+      <File Name="src/model/Tile.cpp"/>
+      <File Name="src/model/Tile.h"/>
+      <File Name="src/model/Vertice.cpp"/>
+      <File Name="src/model/Vertice.h"/>
     </VirtualDirectory>
-    <File Name="src/GameController.cpp"/>
-    <File Name="src/GameController.h"/>
     <File Name="main.cpp"/>
     <VirtualDirectory Name="view">
-      <File Name="src/view/MapView.h"/>
-      <File Name="src/view/MapView.cpp"/>
-      <File Name="src/view/GridView.h"/>
-      <File Name="src/view/GridView.cpp"/>
+      <VirtualDirectory Name="gui">
+        <File Name="src/view/GuiViewManager.h"/>
+        <File Name="src/view/GuiViewManager.cpp"/>
+        <File Name="src/view/GuiStyle.h"/>
+        <File Name="src/view/GuiStyle.cpp"/>
+        <File Name="src/view/GuiElement.h"/>
+        <File Name="src/view/GuiElement.cpp"/>
+        <File Name="src/view/GuiElementGroup.h"/>
+        <File Name="src/view/GuiElementGroup.cpp"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="map">
+        <File Name="src/view/GridView.cpp"/>
+        <File Name="src/view/GridView.h"/>
+        <File Name="src/view/MapView.cpp"/>
+        <File Name="src/view/MapView.h"/>
+      </VirtualDirectory>
+      <File Name="src/view/TextureManager.h"/>
+      <File Name="src/view/TextureManager.cpp"/>
     </VirtualDirectory>
-    <VirtualDirectory Name="control"/>
+    <VirtualDirectory Name="control">
+      <File Name="src/control/GameController.cpp"/>
+      <File Name="src/control/GameController.h"/>
+      <File Name="src/control/GameState.h"/>
+    </VirtualDirectory>
+    <File Name="src/Game.h"/>
+    <File Name="src/Game.cpp"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>

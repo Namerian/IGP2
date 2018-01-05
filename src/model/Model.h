@@ -5,7 +5,7 @@
 #include <vector>
 
 #include "src/model/coordinates/Coordinates.h"
-#include "src/model/graph/Graph.h"
+#include "src/model/Graph.h"
 #include "src/model/Resource.h"
 #include "src/model/ResourceType.h"
 
