@@ -1,8 +1,6 @@
-#include "GameController.h"
+/*#include "GameController.h"
 
-namespace IGP2
-{
-GameController::GameController()
+IGP2::Control::GameController::GameController()
 {
     mMapView.initialize(mModel);
 
@@ -10,11 +8,11 @@ GameController::GameController()
     mCameraView.setSize(1024, 800);
 }
 
-GameController::~GameController()
+IGP2::Control::GameController::~GameController()
 {
 }
 
-void GameController::update(float pDeltaTime)
+void IGP2::Control::GameController::update(float pDeltaTime)
 {
     Eigen::Vector2f cameraMovement(0, 0);
 
@@ -41,10 +39,10 @@ void GameController::update(float pDeltaTime)
     mCameraView.setCenter(oldPos.x + cameraMovement.x(), oldPos.y + cameraMovement.y());
 }
 
-void GameController::draw(sf::RenderWindow& pRenderWindow)
+void IGP2::Control::GameController::draw(sf::RenderWindow& pRenderWindow)
 {
     pRenderWindow.setView(mCameraView);
 
     mMapView.draw(pRenderWindow);
 }
-}
+*/

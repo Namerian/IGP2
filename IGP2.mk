@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=patrick
-Date                   :=05/01/18
+Date                   :=06/01/18
 CodeLitePath           :="/home/patrick/.codelite"
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
@@ -60,8 +60,8 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Game.cpp$(ObjectSuffix) $(IntermediateDirectory)/model_Model.cpp$(ObjectSuffix) $(IntermediateDirectory)/model_Resource.cpp$(ObjectSuffix) $(IntermediateDirectory)/model_Edge.cpp$(ObjectSuffix) $(IntermediateDirectory)/model_Tile.cpp$(ObjectSuffix) $(IntermediateDirectory)/model_Vertice.cpp$(ObjectSuffix) $(IntermediateDirectory)/view_TextureManager.cpp$(ObjectSuffix) $(IntermediateDirectory)/control_GameController.cpp$(ObjectSuffix) $(IntermediateDirectory)/view_GuiViewManager.cpp$(ObjectSuffix) \
-	$(IntermediateDirectory)/view_GuiStyle.cpp$(ObjectSuffix) $(IntermediateDirectory)/view_GuiElement.cpp$(ObjectSuffix) $(IntermediateDirectory)/view_GuiElementGroup.cpp$(ObjectSuffix) $(IntermediateDirectory)/view_GridView.cpp$(ObjectSuffix) $(IntermediateDirectory)/view_MapView.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Game.cpp$(ObjectSuffix) $(IntermediateDirectory)/model_Resource.cpp$(ObjectSuffix) $(IntermediateDirectory)/model_ModelManager.cpp$(ObjectSuffix) $(IntermediateDirectory)/view_TextureManager.cpp$(ObjectSuffix) $(IntermediateDirectory)/control_GameController.cpp$(ObjectSuffix) $(IntermediateDirectory)/control_GameStateMainMenu.cpp$(ObjectSuffix) $(IntermediateDirectory)/control_GameStatePlay.cpp$(ObjectSuffix) $(IntermediateDirectory)/model_Edge.cpp$(ObjectSuffix) $(IntermediateDirectory)/model_Tile.cpp$(ObjectSuffix) \
+	$(IntermediateDirectory)/model_Vertice.cpp$(ObjectSuffix) $(IntermediateDirectory)/view_GuiViewManager.cpp$(ObjectSuffix) $(IntermediateDirectory)/view_GuiStyle.cpp$(ObjectSuffix) $(IntermediateDirectory)/view_GuiElement.cpp$(ObjectSuffix) $(IntermediateDirectory)/view_GuiElementGroup.cpp$(ObjectSuffix) $(IntermediateDirectory)/view_GridView.cpp$(ObjectSuffix) $(IntermediateDirectory)/view_MapView.cpp$(ObjectSuffix) 
 
 
 
@@ -108,14 +108,6 @@ $(IntermediateDirectory)/src_Game.cpp$(DependSuffix): src/Game.cpp
 $(IntermediateDirectory)/src_Game.cpp$(PreprocessSuffix): src/Game.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_Game.cpp$(PreprocessSuffix) "src/Game.cpp"
 
-$(IntermediateDirectory)/model_Model.cpp$(ObjectSuffix): src/model/Model.cpp $(IntermediateDirectory)/model_Model.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/patrick/Documents/programming/repositories/IGP2/src/model/Model.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/model_Model.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/model_Model.cpp$(DependSuffix): src/model/Model.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/model_Model.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/model_Model.cpp$(DependSuffix) -MM "src/model/Model.cpp"
-
-$(IntermediateDirectory)/model_Model.cpp$(PreprocessSuffix): src/model/Model.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/model_Model.cpp$(PreprocessSuffix) "src/model/Model.cpp"
-
 $(IntermediateDirectory)/model_Resource.cpp$(ObjectSuffix): src/model/Resource.cpp $(IntermediateDirectory)/model_Resource.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/patrick/Documents/programming/repositories/IGP2/src/model/Resource.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/model_Resource.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/model_Resource.cpp$(DependSuffix): src/model/Resource.cpp
@@ -123,6 +115,46 @@ $(IntermediateDirectory)/model_Resource.cpp$(DependSuffix): src/model/Resource.c
 
 $(IntermediateDirectory)/model_Resource.cpp$(PreprocessSuffix): src/model/Resource.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/model_Resource.cpp$(PreprocessSuffix) "src/model/Resource.cpp"
+
+$(IntermediateDirectory)/model_ModelManager.cpp$(ObjectSuffix): src/model/ModelManager.cpp $(IntermediateDirectory)/model_ModelManager.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/patrick/Documents/programming/repositories/IGP2/src/model/ModelManager.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/model_ModelManager.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/model_ModelManager.cpp$(DependSuffix): src/model/ModelManager.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/model_ModelManager.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/model_ModelManager.cpp$(DependSuffix) -MM "src/model/ModelManager.cpp"
+
+$(IntermediateDirectory)/model_ModelManager.cpp$(PreprocessSuffix): src/model/ModelManager.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/model_ModelManager.cpp$(PreprocessSuffix) "src/model/ModelManager.cpp"
+
+$(IntermediateDirectory)/view_TextureManager.cpp$(ObjectSuffix): src/view/TextureManager.cpp $(IntermediateDirectory)/view_TextureManager.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/patrick/Documents/programming/repositories/IGP2/src/view/TextureManager.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/view_TextureManager.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/view_TextureManager.cpp$(DependSuffix): src/view/TextureManager.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/view_TextureManager.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/view_TextureManager.cpp$(DependSuffix) -MM "src/view/TextureManager.cpp"
+
+$(IntermediateDirectory)/view_TextureManager.cpp$(PreprocessSuffix): src/view/TextureManager.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/view_TextureManager.cpp$(PreprocessSuffix) "src/view/TextureManager.cpp"
+
+$(IntermediateDirectory)/control_GameController.cpp$(ObjectSuffix): src/control/GameController.cpp $(IntermediateDirectory)/control_GameController.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/patrick/Documents/programming/repositories/IGP2/src/control/GameController.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/control_GameController.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/control_GameController.cpp$(DependSuffix): src/control/GameController.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/control_GameController.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/control_GameController.cpp$(DependSuffix) -MM "src/control/GameController.cpp"
+
+$(IntermediateDirectory)/control_GameController.cpp$(PreprocessSuffix): src/control/GameController.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/control_GameController.cpp$(PreprocessSuffix) "src/control/GameController.cpp"
+
+$(IntermediateDirectory)/control_GameStateMainMenu.cpp$(ObjectSuffix): src/control/GameStateMainMenu.cpp $(IntermediateDirectory)/control_GameStateMainMenu.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/patrick/Documents/programming/repositories/IGP2/src/control/GameStateMainMenu.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/control_GameStateMainMenu.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/control_GameStateMainMenu.cpp$(DependSuffix): src/control/GameStateMainMenu.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/control_GameStateMainMenu.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/control_GameStateMainMenu.cpp$(DependSuffix) -MM "src/control/GameStateMainMenu.cpp"
+
+$(IntermediateDirectory)/control_GameStateMainMenu.cpp$(PreprocessSuffix): src/control/GameStateMainMenu.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/control_GameStateMainMenu.cpp$(PreprocessSuffix) "src/control/GameStateMainMenu.cpp"
+
+$(IntermediateDirectory)/control_GameStatePlay.cpp$(ObjectSuffix): src/control/GameStatePlay.cpp $(IntermediateDirectory)/control_GameStatePlay.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/patrick/Documents/programming/repositories/IGP2/src/control/GameStatePlay.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/control_GameStatePlay.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/control_GameStatePlay.cpp$(DependSuffix): src/control/GameStatePlay.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/control_GameStatePlay.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/control_GameStatePlay.cpp$(DependSuffix) -MM "src/control/GameStatePlay.cpp"
+
+$(IntermediateDirectory)/control_GameStatePlay.cpp$(PreprocessSuffix): src/control/GameStatePlay.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/control_GameStatePlay.cpp$(PreprocessSuffix) "src/control/GameStatePlay.cpp"
 
 $(IntermediateDirectory)/model_Edge.cpp$(ObjectSuffix): src/model/Edge.cpp $(IntermediateDirectory)/model_Edge.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/patrick/Documents/programming/repositories/IGP2/src/model/Edge.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/model_Edge.cpp$(ObjectSuffix) $(IncludePath)
@@ -147,22 +179,6 @@ $(IntermediateDirectory)/model_Vertice.cpp$(DependSuffix): src/model/Vertice.cpp
 
 $(IntermediateDirectory)/model_Vertice.cpp$(PreprocessSuffix): src/model/Vertice.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/model_Vertice.cpp$(PreprocessSuffix) "src/model/Vertice.cpp"
-
-$(IntermediateDirectory)/view_TextureManager.cpp$(ObjectSuffix): src/view/TextureManager.cpp $(IntermediateDirectory)/view_TextureManager.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/patrick/Documents/programming/repositories/IGP2/src/view/TextureManager.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/view_TextureManager.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/view_TextureManager.cpp$(DependSuffix): src/view/TextureManager.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/view_TextureManager.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/view_TextureManager.cpp$(DependSuffix) -MM "src/view/TextureManager.cpp"
-
-$(IntermediateDirectory)/view_TextureManager.cpp$(PreprocessSuffix): src/view/TextureManager.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/view_TextureManager.cpp$(PreprocessSuffix) "src/view/TextureManager.cpp"
-
-$(IntermediateDirectory)/control_GameController.cpp$(ObjectSuffix): src/control/GameController.cpp $(IntermediateDirectory)/control_GameController.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/patrick/Documents/programming/repositories/IGP2/src/control/GameController.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/control_GameController.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/control_GameController.cpp$(DependSuffix): src/control/GameController.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/control_GameController.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/control_GameController.cpp$(DependSuffix) -MM "src/control/GameController.cpp"
-
-$(IntermediateDirectory)/control_GameController.cpp$(PreprocessSuffix): src/control/GameController.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/control_GameController.cpp$(PreprocessSuffix) "src/control/GameController.cpp"
 
 $(IntermediateDirectory)/view_GuiViewManager.cpp$(ObjectSuffix): src/view/GuiViewManager.cpp $(IntermediateDirectory)/view_GuiViewManager.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/patrick/Documents/programming/repositories/IGP2/src/view/GuiViewManager.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/view_GuiViewManager.cpp$(ObjectSuffix) $(IncludePath)

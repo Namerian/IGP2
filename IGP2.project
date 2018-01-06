@@ -31,28 +31,30 @@
   <VirtualDirectory Name="src">
     <VirtualDirectory Name="model">
       <VirtualDirectory Name="coordinates">
-        <File Name="src/model/coordinates/AxialCoordinate.h"/>
-        <File Name="src/model/coordinates/CubeCoordinate.h"/>
-        <File Name="src/model/coordinates/EdgeCoordinate.h"/>
-        <File Name="src/model/coordinates/OffsetCoordinate.h"/>
-        <File Name="src/model/coordinates/VerticeCoordinate.h"/>
-        <File Name="src/model/coordinates/Coordinates.h"/>
-        <File Name="src/model/coordinates/EdgeDirection.h"/>
-        <File Name="src/model/coordinates/HexDirection.h"/>
-        <File Name="src/model/coordinates/VerticeDirection.h"/>
+        <File Name="src/model/AxialCoordinate.h"/>
+        <File Name="src/model/CubeCoordinate.h"/>
+        <File Name="src/model/EdgeCoordinate.h"/>
+        <File Name="src/model/EdgeDirection.h"/>
+        <File Name="src/model/HexDirection.h"/>
+        <File Name="src/model/OffsetCoordinate.h"/>
+        <File Name="src/model/VerticeCoordinate.h"/>
+        <File Name="src/model/VerticeDirection.h"/>
+        <File Name="src/model/CoordinateUtility.h"/>
       </VirtualDirectory>
-      <File Name="src/model/Model.h"/>
-      <File Name="src/model/Model.cpp"/>
       <File Name="src/model/Resource.h"/>
       <File Name="src/model/Resource.cpp"/>
       <File Name="src/model/ResourceType.h"/>
-      <File Name="src/model/Edge.cpp"/>
-      <File Name="src/model/Edge.h"/>
-      <File Name="src/model/Graph.h"/>
-      <File Name="src/model/Tile.cpp"/>
-      <File Name="src/model/Tile.h"/>
-      <File Name="src/model/Vertice.cpp"/>
-      <File Name="src/model/Vertice.h"/>
+      <File Name="src/model/ModelManager.h"/>
+      <VirtualDirectory Name="graph">
+        <File Name="src/model/Edge.cpp"/>
+        <File Name="src/model/Edge.h"/>
+        <File Name="src/model/Tile.cpp"/>
+        <File Name="src/model/Tile.h"/>
+        <File Name="src/model/Vertice.cpp"/>
+        <File Name="src/model/Vertice.h"/>
+        <File Name="src/model/GraphUtility.h"/>
+      </VirtualDirectory>
+      <File Name="src/model/ModelManager.cpp"/>
     </VirtualDirectory>
     <File Name="main.cpp"/>
     <VirtualDirectory Name="view">
@@ -79,6 +81,10 @@
       <File Name="src/control/GameController.cpp"/>
       <File Name="src/control/GameController.h"/>
       <File Name="src/control/GameState.h"/>
+      <File Name="src/control/GameStateMainMenu.h"/>
+      <File Name="src/control/GameStateMainMenu.cpp"/>
+      <File Name="src/control/GameStatePlay.h"/>
+      <File Name="src/control/GameStatePlay.cpp"/>
     </VirtualDirectory>
     <File Name="src/Game.h"/>
     <File Name="src/Game.cpp"/>

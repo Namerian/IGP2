@@ -2,8 +2,8 @@
 
 namespace IGP2
 {
-enum class eResourceType
+namespace Model
 {
-    LOGS, IRON, COAL, UNKNOWN
-};
+    enum class eResourceType { IRON, COAL, UNKNOWN };
+}
 }

@@ -2,7 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "src/model/Model.h"
+#include "src/model/ModelManager.h"
 
 #include "GridView.h"
 
@@ -15,8 +15,8 @@ namespace View
     public:
         MapView();
         ~MapView();
-        
-        void initialize(const Model& pModel);
+
+        void initialize(const Model::ModelManager& pModel);
         void draw(sf::RenderWindow& pRenderWindow);
 
     private:

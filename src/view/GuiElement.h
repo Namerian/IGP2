@@ -2,6 +2,7 @@
 
 #include <string>
 
+#include <SFML/Graphics/Drawable.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/RenderStates.hpp>
 #include <SFML/Graphics/RenderTarget.hpp>
@@ -12,7 +13,7 @@ namespace IGP2
 namespace View
 {
 
-    class GuiElement
+    class GuiElement : public sf::Drawable
     {
     public:
         GuiElement();

@@ -2,7 +2,7 @@
 
 namespace IGP2
 {
-namespace Graph
+namespace Model
 {
     class Edge
     {

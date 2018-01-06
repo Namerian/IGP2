@@ -1,29 +1,33 @@
-#pragma once
+/*#pragma once
 
 #include <Eigen/Core>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 
-#include "src/model/Model.h"
+#include "src/model/ModelManager.h"
 #include "src/view/MapView.h"
 
 namespace IGP2
 {
-class GameController
+namespace Control
 {
-public:
-    GameController();
-    virtual ~GameController();
+    class GameController
+    {
+    public:
+        GameController();
+        virtual ~GameController();
 
-    void update(float pDeltaTime);
-    void draw(sf::RenderWindow& pRenderWindow);
+        void update(float pDeltaTime);
+        void draw(sf::RenderWindow& pRenderWindow);
 
-protected:
-private:
-    Model mModel;
+    protected:
+    private:
+        Model::ModelManager mModel;
 
-    View::MapView mMapView;
+        View::MapView mMapView;
 
-    sf::View mCameraView;
-};
+        sf::View mCameraView;
+    };
 }
+}
+*/

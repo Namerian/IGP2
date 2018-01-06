@@ -1,38 +1,34 @@
 #include "Resource.h"
 
-namespace IGP2
+IGP2::Model::Resource::Resource(const AxialCoordinate& pPosition, const eResourceType pType, const int pAmount)
+    : mPosition(pPosition)
 {
-Resource::Resource(const Coordinates::AxialCoordinate& pPosition, const eResourceType pType,const int pAmount):
-    mPosition(pPosition)
-{
-    //mPosition(pPosition);
-    mType=pType;
-    mAmount=pAmount;
+    // mPosition(pPosition);
+    mType = pType;
+    mAmount = pAmount;
 }
 
-Resource::~Resource()
+IGP2::Model::Resource::~Resource()
 {
 }
 
-Coordinates::AxialCoordinate Resource::GetPosition() const
+IGP2::Model::AxialCoordinate IGP2::Model::Resource::GetPosition() const
 {
     return mPosition;
 }
-eResourceType Resource::GetType() const
+IGP2::Model::eResourceType IGP2::Model::Resource::GetType() const
 {
     return mType;
 }
-int Resource::GetAmount() const
+int IGP2::Model::Resource::GetAmount() const
 {
     return mAmount;
 }
 
-void Resource::ChangeAmount(int pDeltaAmount)
+void IGP2::Model::Resource::ChangeAmount(int pDeltaAmount)
 {
-    mAmount+=pDeltaAmount;
-    if(mAmount<0) {
-        mAmount=0;
+    mAmount += pDeltaAmount;
+    if(mAmount < 0) {
+        mAmount = 0;
     }
-}
-
 }

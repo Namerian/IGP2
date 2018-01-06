@@ -1,27 +1,30 @@
 #pragma once
 
+#include "src/model/AxialCoordinate.h"
 #include "src/model/ResourceType.h"
-#include "src/model/coordinates/AxialCoordinate.h"
 
 namespace IGP2
 {
 
-class Resource
+namespace Model
 {
-public:
-    Resource(const Coordinates::AxialCoordinate& pPosition, const eResourceType pType, const int pAmount);
-    virtual ~Resource();
 
-    Coordinates::AxialCoordinate GetPosition() const;
-    eResourceType GetType() const;
-    int GetAmount() const;
+    class Resource
+    {
+    public:
+        Resource(const AxialCoordinate& pPosition, const eResourceType pType, const int pAmount);
+        virtual ~Resource();
 
-    void ChangeAmount(int pDeltaAmount);
+        AxialCoordinate GetPosition() const;
+        eResourceType GetType() const;
+        int GetAmount() const;
 
-private:
-    Coordinates::AxialCoordinate mPosition;
-    eResourceType mType;
-    int mAmount;
-};
+        void ChangeAmount(int pDeltaAmount);
 
+    private:
+        AxialCoordinate mPosition;
+        eResourceType mType;
+        int mAmount;
+    };
+}
 }

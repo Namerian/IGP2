@@ -2,14 +2,14 @@
 
 namespace IGP2
 {
-
-class Vertice
+namespace Model
 {
-public:
-    Vertice();
-    ~Vertice();
 
-};
-
+    class Vertice
+    {
+    public:
+        Vertice();
+        ~Vertice();
+    };
 }
-
+}

@@ -4,7 +4,7 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "src/model/Model.h"
+#include "src/model/ModelManager.h"
 
 namespace IGP2
 {
@@ -16,7 +16,7 @@ namespace View
         GridView();
         ~GridView();
 
-        void initialize(const Model& pModel);
+        void initialize(const Model::ModelManager& pModel);
         void draw(sf::RenderWindow& pRenderWindow);
 
     private:

@@ -12,17 +12,17 @@ namespace View
     {
     }
 
-    void GridView::initialize(const Model& pModel)
+    void GridView::initialize(const Model::ModelManager& pModel)
     {
-        std::vector<Coordinates::EdgeCoordinate> edgeCoords = pModel.GetEdgePositions();
+        std::vector<Model::EdgeCoordinate> edgeCoords = pModel.GetEdgePositions();
 
         mVertexArray.clear();
 
         for(unsigned int i = 0; i < edgeCoords.size(); i++) {
-            std::vector<Coordinates::VerticeCoordinate> vertices = Graph::GetEdgeVertices(edgeCoords[i]);
+            std::vector<Model::VerticeCoordinate> vertices = Model::GraphUtility::GetEdgeVertices(edgeCoords[i]);
 
-            mVertexArray.push_back(sf::Vertex(Coordinates::VertexToPixel(vertices[0]), sf::Color::Red));
-            mVertexArray.push_back(sf::Vertex(Coordinates::VertexToPixel(vertices[1]), sf::Color::Red));
+            mVertexArray.push_back(sf::Vertex(Model::CoordinateUtility::VertexToPixel(vertices[0]), sf::Color::Red));
+            mVertexArray.push_back(sf::Vertex(Model::CoordinateUtility::VertexToPixel(vertices[1]), sf::Color::Red));
         }
     }
 

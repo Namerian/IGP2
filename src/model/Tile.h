@@ -1,30 +1,32 @@
 #pragma once
 
-#include <vector>
 #include <map>
+#include <vector>
 
 #include "src/model/Resource.h"
 #include "src/model/ResourceType.h"
 
 namespace IGP2
 {
-
-class Tile
+namespace Model
 {
-public:
-    Tile();
-    ~Tile();
 
-    bool ContainsResource();
-    bool ContainsResource(eResourceType pResourceType);
+    class Tile
+    {
+    public:
+        Tile();
+        ~Tile();
 
-    std::vector<Resource*> GetResources();
-    Resource* GetResource(eResourceType pResourceType);
+        bool ContainsResource();
+        bool ContainsResource(eResourceType pResourceType);
 
-    void AddResource(Resource* pResource);
+        std::vector<Resource*> GetResources();
+        Resource* GetResource(eResourceType pResourceType);
 
-private:
-    std::map<eResourceType, Resource*> mResourceMap;
-};
+        void AddResource(Resource* pResource);
 
+    private:
+        std::map<eResourceType, Resource*> mResourceMap;
+    };
+}
 }

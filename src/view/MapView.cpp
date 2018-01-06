@@ -12,7 +12,7 @@ namespace View
     {
     }
 
-    void MapView::initialize(const Model& pModel)
+    void MapView::initialize(const Model::ModelManager& pModel)
     {
         mGridView.initialize(pModel);
     }
