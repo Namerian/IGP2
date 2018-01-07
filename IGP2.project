@@ -58,15 +58,13 @@
     </VirtualDirectory>
     <File Name="main.cpp"/>
     <VirtualDirectory Name="view">
-      <VirtualDirectory Name="gui">
+      <VirtualDirectory Name="gui_old">
         <File Name="src/view/GuiViewManager.h"/>
         <File Name="src/view/GuiViewManager.cpp"/>
-        <File Name="src/view/GuiStyle.h"/>
-        <File Name="src/view/GuiStyle.cpp"/>
-        <File Name="src/view/GuiElement.h"/>
-        <File Name="src/view/GuiElement.cpp"/>
         <File Name="src/view/GuiElementGroup.h"/>
         <File Name="src/view/GuiElementGroup.cpp"/>
+        <File Name="src/view/GuiStyle.h"/>
+        <File Name="src/view/GuiStyle.cpp"/>
       </VirtualDirectory>
       <VirtualDirectory Name="map">
         <File Name="src/view/GridView.cpp"/>
@@ -74,8 +72,14 @@
         <File Name="src/view/MapView.cpp"/>
         <File Name="src/view/MapView.h"/>
       </VirtualDirectory>
-      <File Name="src/view/TextureManager.h"/>
-      <File Name="src/view/TextureManager.cpp"/>
+      <VirtualDirectory Name="gui">
+        <File Name="src/view/GuiElement.h"/>
+        <File Name="src/view/GuiElementType.h"/>
+        <File Name="src/view/GuiButton.h"/>
+        <File Name="src/view/GuiButton.cpp"/>
+      </VirtualDirectory>
+      <File Name="src/view/ResourceManager.h"/>
+      <File Name="src/view/ResourceManager.cpp"/>
     </VirtualDirectory>
     <VirtualDirectory Name="control">
       <File Name="src/control/GameController.cpp"/>
