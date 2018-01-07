@@ -5,7 +5,7 @@
 
 IGP2::Game::Game()
 {
-    mWindow.create(sf::VideoMode(1024, 800), "IGP2", sf::Style::Titlebar || sf::Style::Close);
+    mWindow.create(sf::VideoMode(1024, 800), "IGP2", sf::Style::Titlebar | sf::Style::Close);
     mWindow.setVerticalSyncEnabled(true);
 }
 
@@ -48,9 +48,9 @@ sf::RenderWindow& IGP2::Game::getWindow()
     return mWindow;
 }
 
-IGP2::View::TextureManager& IGP2::Game::getTextureManager()
+IGP2::View::ResourceManager& IGP2::Game::getResourceManager()
 {
-    return mTextureManager;
+    return mResourceManager;
 }
 
 void IGP2::Game::pushState(Control::GameState* pState)

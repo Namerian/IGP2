@@ -1,4 +1,4 @@
-#include "GuiStyle.h"
+/*#include "GuiStyle.h"
 
 IGP2::View::GuiStyle::GuiStyle()
 {
@@ -29,4 +29,4 @@ sf::Color IGP2::View::GuiStyle::getTextHighlightedColor() const
 sf::Font* IGP2::View::GuiStyle::getFont() const
 {
     return mFont;
-}
+}*/

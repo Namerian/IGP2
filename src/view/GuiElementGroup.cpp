@@ -1,4 +1,4 @@
-#include "GuiElementGroup.h"
+/*#include "GuiElementGroup.h"
 
 IGP2::View::GuiElementGroup::GuiElementGroup()
 {
@@ -24,3 +24,4 @@ std::vector<IGP2::View::GuiElement*>& IGP2::View::GuiElementGroup::getChildren()
 {
     return mChildren;
 }
+*/

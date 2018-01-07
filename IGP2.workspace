@@ -2,7 +2,7 @@
 <CodeLite_Workspace Name="IGP2" Database="" Version="10.0.0">
   <Project Name="IGP2" Path="IGP2.project" Active="Yes"/>
   <BuildMatrix>
-    <WorkspaceConfiguration Name="Debug" Selected="yes">
+    <WorkspaceConfiguration Name="Debug" Selected="no">
       <Environment/>
       <Project Name="IGP2" ConfigName="Debug"/>
     </WorkspaceConfiguration>

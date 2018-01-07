@@ -1,4 +1,4 @@
-#include "GuiViewManager.h"
+/*#include "GuiViewManager.h"
 
 IGP2::View::GuiViewManager::GuiViewManager()
 {
@@ -18,4 +18,4 @@ void IGP2::View::GuiViewManager::AddGuiElement(const GuiElement* pGuiElement)
 
 void IGP2::View::GuiViewManager::RemoveGuiElement(const GuiElement* pGuiElement)
 {
-}
+}*/

@@ -4,7 +4,7 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "src/view/TextureManager.h"
+#include "src/view/ResourceManager.h"
 
 namespace IGP2
 {
@@ -23,7 +23,7 @@ public:
     void gameloop();
 
     sf::RenderWindow& getWindow();
-    View::TextureManager& getTextureManager();
+    View::ResourceManager& getResourceManager();
 
     void pushState(Control::GameState* pState);
     void popState();
@@ -32,7 +32,7 @@ public:
 
 private:
     sf::RenderWindow mWindow;
-    View::TextureManager mTextureManager;
+    View::ResourceManager mResourceManager;
 
     std::stack<Control::GameState*> mStates;
 };

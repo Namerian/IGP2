@@ -2,18 +2,18 @@
 ## Auto Generated makefile by CodeLite IDE
 ## any manual changes will be erased      
 ##
-## Debug
+## Release
 ProjectName            :=IGP2
-ConfigurationName      :=Debug
+ConfigurationName      :=Release
 WorkspacePath          := "/home/patrick/Documents/programming/repositories/IGP2"
 ProjectPath            := "/home/patrick/Documents/programming/repositories/IGP2"
-IntermediateDirectory  :=./Debug
+IntermediateDirectory  :=./Release
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=patrick
-Date                   :=06/01/18
+Date                   :=07/01/18
 CodeLitePath           :="/home/patrick/.codelite"
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
@@ -28,7 +28,7 @@ LibraryPathSwitch      :=-L
 PreprocessorSwitch     :=-D
 SourceSwitch           :=-c 
 OutputFile             :=$(IntermediateDirectory)/$(ProjectName)
-Preprocessors          :=$(PreprocessorSwitch)SFML_STATIC 
+Preprocessors          :=$(PreprocessorSwitch)NDEBUG $(PreprocessorSwitch)SFML_STATIC 
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
 PreprocessOnlySwitch   :=-E
@@ -50,8 +50,8 @@ LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)/usr/local/l
 AR       := /usr/bin/ar rcu
 CXX      := /usr/bin/g++
 CC       := /usr/bin/gcc
-CXXFLAGS :=  -g -O0 -std=c++14 -std=c++11 -Wall $(Preprocessors)
-CFLAGS   :=  -g -O0 -Wall $(Preprocessors)
+CXXFLAGS :=  -O2 -std=c++14 -std=c++11 -Wall $(Preprocessors)
+CFLAGS   :=  -O2 -Wall $(Preprocessors)
 ASFLAGS  := 
 AS       := /usr/bin/as
 
@@ -60,8 +60,8 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Game.cpp$(ObjectSuffix) $(IntermediateDirectory)/model_Resource.cpp$(ObjectSuffix) $(IntermediateDirectory)/model_ModelManager.cpp$(ObjectSuffix) $(IntermediateDirectory)/view_TextureManager.cpp$(ObjectSuffix) $(IntermediateDirectory)/control_GameController.cpp$(ObjectSuffix) $(IntermediateDirectory)/control_GameStateMainMenu.cpp$(ObjectSuffix) $(IntermediateDirectory)/control_GameStatePlay.cpp$(ObjectSuffix) $(IntermediateDirectory)/model_Edge.cpp$(ObjectSuffix) $(IntermediateDirectory)/model_Tile.cpp$(ObjectSuffix) \
-	$(IntermediateDirectory)/model_Vertice.cpp$(ObjectSuffix) $(IntermediateDirectory)/view_GuiViewManager.cpp$(ObjectSuffix) $(IntermediateDirectory)/view_GuiStyle.cpp$(ObjectSuffix) $(IntermediateDirectory)/view_GuiElement.cpp$(ObjectSuffix) $(IntermediateDirectory)/view_GuiElementGroup.cpp$(ObjectSuffix) $(IntermediateDirectory)/view_GridView.cpp$(ObjectSuffix) $(IntermediateDirectory)/view_MapView.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Game.cpp$(ObjectSuffix) $(IntermediateDirectory)/model_Resource.cpp$(ObjectSuffix) $(IntermediateDirectory)/model_ModelManager.cpp$(ObjectSuffix) $(IntermediateDirectory)/view_ResourceManager.cpp$(ObjectSuffix) $(IntermediateDirectory)/control_GameController.cpp$(ObjectSuffix) $(IntermediateDirectory)/control_GameStateMainMenu.cpp$(ObjectSuffix) $(IntermediateDirectory)/control_GameStatePlay.cpp$(ObjectSuffix) $(IntermediateDirectory)/model_Edge.cpp$(ObjectSuffix) $(IntermediateDirectory)/model_Tile.cpp$(ObjectSuffix) \
+	$(IntermediateDirectory)/model_Vertice.cpp$(ObjectSuffix) $(IntermediateDirectory)/view_GuiViewManager.cpp$(ObjectSuffix) $(IntermediateDirectory)/view_GuiElementGroup.cpp$(ObjectSuffix) $(IntermediateDirectory)/view_GuiStyle.cpp$(ObjectSuffix) $(IntermediateDirectory)/view_GridView.cpp$(ObjectSuffix) $(IntermediateDirectory)/view_MapView.cpp$(ObjectSuffix) $(IntermediateDirectory)/view_GuiButton.cpp$(ObjectSuffix) 
 
 
 
@@ -80,11 +80,11 @@ $(OutputFile): $(IntermediateDirectory)/.d $(Objects)
 	$(LinkerName) $(OutputSwitch)$(OutputFile) @$(ObjectsFileList) $(LibPath) $(Libs) $(LinkOptions)
 
 MakeIntermediateDirs:
-	@test -d ./Debug || $(MakeDirCommand) ./Debug
+	@test -d ./Release || $(MakeDirCommand) ./Release
 
 
 $(IntermediateDirectory)/.d:
-	@test -d ./Debug || $(MakeDirCommand) ./Debug
+	@test -d ./Release || $(MakeDirCommand) ./Release
 
 PreBuild:
 
@@ -124,13 +124,13 @@ $(IntermediateDirectory)/model_ModelManager.cpp$(DependSuffix): src/model/ModelM
 $(IntermediateDirectory)/model_ModelManager.cpp$(PreprocessSuffix): src/model/ModelManager.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/model_ModelManager.cpp$(PreprocessSuffix) "src/model/ModelManager.cpp"
 
-$(IntermediateDirectory)/view_TextureManager.cpp$(ObjectSuffix): src/view/TextureManager.cpp $(IntermediateDirectory)/view_TextureManager.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/patrick/Documents/programming/repositories/IGP2/src/view/TextureManager.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/view_TextureManager.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/view_TextureManager.cpp$(DependSuffix): src/view/TextureManager.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/view_TextureManager.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/view_TextureManager.cpp$(DependSuffix) -MM "src/view/TextureManager.cpp"
+$(IntermediateDirectory)/view_ResourceManager.cpp$(ObjectSuffix): src/view/ResourceManager.cpp $(IntermediateDirectory)/view_ResourceManager.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/patrick/Documents/programming/repositories/IGP2/src/view/ResourceManager.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/view_ResourceManager.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/view_ResourceManager.cpp$(DependSuffix): src/view/ResourceManager.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/view_ResourceManager.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/view_ResourceManager.cpp$(DependSuffix) -MM "src/view/ResourceManager.cpp"
 
-$(IntermediateDirectory)/view_TextureManager.cpp$(PreprocessSuffix): src/view/TextureManager.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/view_TextureManager.cpp$(PreprocessSuffix) "src/view/TextureManager.cpp"
+$(IntermediateDirectory)/view_ResourceManager.cpp$(PreprocessSuffix): src/view/ResourceManager.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/view_ResourceManager.cpp$(PreprocessSuffix) "src/view/ResourceManager.cpp"
 
 $(IntermediateDirectory)/control_GameController.cpp$(ObjectSuffix): src/control/GameController.cpp $(IntermediateDirectory)/control_GameController.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/patrick/Documents/programming/repositories/IGP2/src/control/GameController.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/control_GameController.cpp$(ObjectSuffix) $(IncludePath)
@@ -188,22 +188,6 @@ $(IntermediateDirectory)/view_GuiViewManager.cpp$(DependSuffix): src/view/GuiVie
 $(IntermediateDirectory)/view_GuiViewManager.cpp$(PreprocessSuffix): src/view/GuiViewManager.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/view_GuiViewManager.cpp$(PreprocessSuffix) "src/view/GuiViewManager.cpp"
 
-$(IntermediateDirectory)/view_GuiStyle.cpp$(ObjectSuffix): src/view/GuiStyle.cpp $(IntermediateDirectory)/view_GuiStyle.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/patrick/Documents/programming/repositories/IGP2/src/view/GuiStyle.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/view_GuiStyle.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/view_GuiStyle.cpp$(DependSuffix): src/view/GuiStyle.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/view_GuiStyle.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/view_GuiStyle.cpp$(DependSuffix) -MM "src/view/GuiStyle.cpp"
-
-$(IntermediateDirectory)/view_GuiStyle.cpp$(PreprocessSuffix): src/view/GuiStyle.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/view_GuiStyle.cpp$(PreprocessSuffix) "src/view/GuiStyle.cpp"
-
-$(IntermediateDirectory)/view_GuiElement.cpp$(ObjectSuffix): src/view/GuiElement.cpp $(IntermediateDirectory)/view_GuiElement.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/patrick/Documents/programming/repositories/IGP2/src/view/GuiElement.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/view_GuiElement.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/view_GuiElement.cpp$(DependSuffix): src/view/GuiElement.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/view_GuiElement.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/view_GuiElement.cpp$(DependSuffix) -MM "src/view/GuiElement.cpp"
-
-$(IntermediateDirectory)/view_GuiElement.cpp$(PreprocessSuffix): src/view/GuiElement.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/view_GuiElement.cpp$(PreprocessSuffix) "src/view/GuiElement.cpp"
-
 $(IntermediateDirectory)/view_GuiElementGroup.cpp$(ObjectSuffix): src/view/GuiElementGroup.cpp $(IntermediateDirectory)/view_GuiElementGroup.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/patrick/Documents/programming/repositories/IGP2/src/view/GuiElementGroup.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/view_GuiElementGroup.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/view_GuiElementGroup.cpp$(DependSuffix): src/view/GuiElementGroup.cpp
@@ -211,6 +195,14 @@ $(IntermediateDirectory)/view_GuiElementGroup.cpp$(DependSuffix): src/view/GuiEl
 
 $(IntermediateDirectory)/view_GuiElementGroup.cpp$(PreprocessSuffix): src/view/GuiElementGroup.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/view_GuiElementGroup.cpp$(PreprocessSuffix) "src/view/GuiElementGroup.cpp"
+
+$(IntermediateDirectory)/view_GuiStyle.cpp$(ObjectSuffix): src/view/GuiStyle.cpp $(IntermediateDirectory)/view_GuiStyle.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/patrick/Documents/programming/repositories/IGP2/src/view/GuiStyle.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/view_GuiStyle.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/view_GuiStyle.cpp$(DependSuffix): src/view/GuiStyle.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/view_GuiStyle.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/view_GuiStyle.cpp$(DependSuffix) -MM "src/view/GuiStyle.cpp"
+
+$(IntermediateDirectory)/view_GuiStyle.cpp$(PreprocessSuffix): src/view/GuiStyle.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/view_GuiStyle.cpp$(PreprocessSuffix) "src/view/GuiStyle.cpp"
 
 $(IntermediateDirectory)/view_GridView.cpp$(ObjectSuffix): src/view/GridView.cpp $(IntermediateDirectory)/view_GridView.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/patrick/Documents/programming/repositories/IGP2/src/view/GridView.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/view_GridView.cpp$(ObjectSuffix) $(IncludePath)
@@ -228,12 +220,20 @@ $(IntermediateDirectory)/view_MapView.cpp$(DependSuffix): src/view/MapView.cpp
 $(IntermediateDirectory)/view_MapView.cpp$(PreprocessSuffix): src/view/MapView.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/view_MapView.cpp$(PreprocessSuffix) "src/view/MapView.cpp"
 
+$(IntermediateDirectory)/view_GuiButton.cpp$(ObjectSuffix): src/view/GuiButton.cpp $(IntermediateDirectory)/view_GuiButton.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/patrick/Documents/programming/repositories/IGP2/src/view/GuiButton.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/view_GuiButton.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/view_GuiButton.cpp$(DependSuffix): src/view/GuiButton.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/view_GuiButton.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/view_GuiButton.cpp$(DependSuffix) -MM "src/view/GuiButton.cpp"
+
+$(IntermediateDirectory)/view_GuiButton.cpp$(PreprocessSuffix): src/view/GuiButton.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/view_GuiButton.cpp$(PreprocessSuffix) "src/view/GuiButton.cpp"
+
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
 ##
 ## Clean
 ##
 clean:
-	$(RM) -r ./Debug/
+	$(RM) -r ./Release/
 
 

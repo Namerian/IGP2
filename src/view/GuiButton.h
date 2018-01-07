@@ -15,6 +15,8 @@ namespace View
     public:
         GuiButton();
         virtual ~GuiButton();
+
+        virtual void draw(sf::RenderTarget& pTarget, sf::RenderStates pStates) const;
     };
 }
 }

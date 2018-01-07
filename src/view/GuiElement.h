@@ -17,7 +17,11 @@ namespace View
     class GuiElement : public sf::Drawable
     {
     public:
-        virtual void draw(sf::RenderTarget& pTarget, sf::RenderStates pStates) const;
+        GuiElement(){};
+
+        virtual ~GuiElement(){};
+
+        virtual void draw(sf::RenderTarget& pTarget, sf::RenderStates pStates) const = 0;
 
         inline std::string getName()
         {

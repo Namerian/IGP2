@@ -18,10 +18,10 @@ namespace View
         virtual ~ResourceManager();
 
         void loadTexture(const std::string& pTextureName, const std::string& pFileName);
-        sf::Texture& getTexture(const std::string& pTextureName) const;
+        sf::Texture& getTexture(const std::string& pTextureName);
 
         void loadFont(const std::string& pFontName, const std::string& pFileName);
-        sf::Font& getFont(const std::string& pFontName) const;
+        sf::Font& getFont(const std::string& pFontName);
 
     private:
         std::map<std::string, sf::Texture> mTextures;
