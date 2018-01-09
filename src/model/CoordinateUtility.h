@@ -38,70 +38,21 @@ namespace Model
 
         //***************************************
 
-        inline AxialCoordinate CubeToAxial(const CubeCoordinate& pCube)
-        {
-            AxialCoordinate result(pCube.GetX(), pCube.GetZ());
-            return result;
-        }
+        AxialCoordinate CubeToAxial(const CubeCoordinate& pCube);
 
-        inline CubeCoordinate AxialToCube(const AxialCoordinate& pAxial)
-        {
-            int x = pAxial.GetU();
-            int z = pAxial.GetV();
-            int y = -x - z;
+        CubeCoordinate AxialToCube(const AxialCoordinate& pAxial);
 
-            CubeCoordinate result(x, y, z);
-            return result;
-        }
+        OffsetCoordinate CubeToOffset(const CubeCoordinate& pCube);
 
-        inline OffsetCoordinate CubeToOffset(const CubeCoordinate& pCube)
-        {
-            int col = pCube.GetX();
-            int row = -pCube.GetZ() + (pCube.GetX() - (pCube.GetX() & 1)) / 2;
+        CubeCoordinate OffsetToCube(const OffsetCoordinate& pOffset);
 
-            OffsetCoordinate result(col, row);
-            return result;
-        }
+        AxialCoordinate OffsetToAxial(const OffsetCoordinate& pOffset);
 
-        inline CubeCoordinate OffsetToCube(const OffsetCoordinate& pOffset)
-        {
-            int x = pOffset.GetCol();
-            int z = -pOffset.GetRow() + (pOffset.GetCol() - (pOffset.GetCol() & 1)) / 2;
-            int y = -x - z;
+        OffsetCoordinate AxialToOffset(const AxialCoordinate& pAxial);
 
-            CubeCoordinate result(x, y, z);
-            return result;
-        }
+        sf::Vector2f AxialToPixel(const AxialCoordinate& pAxial);
 
-        inline AxialCoordinate OffsetToAxial(const OffsetCoordinate& pOffset)
-        {
-            return CubeToAxial(OffsetToCube(pOffset));
-        }
-
-        inline OffsetCoordinate AxialToOffset(const AxialCoordinate& pAxial)
-        {
-            return CubeToOffset(AxialToCube(pAxial));
-        }
-
-        inline sf::Vector2f AxialToPixel(const AxialCoordinate& pAxial)
-        {
-            sf::Vector2f result = (float)pAxial.GetU() * GetAxisU() + (float)pAxial.GetV() * GetAxisV();
-            return result;
-        }
-
-        inline sf::Vector2f VertexToPixel(const VerticeCoordinate& pVertice)
-        {
-            sf::Vector2f result = (float)pVertice.GetU() * GetAxisU() + (float)pVertice.GetV() * GetAxisV();
-            eVerticeDirection dir = pVertice.GetD();
-
-            if(dir == eVerticeDirection::LEFT) {
-                result.x -= HEX_SIZE;
-            } else if(dir == eVerticeDirection::RIGHT) {
-                result.x += HEX_SIZE;
-            }
-
-            return result;
-        }
+        sf::Vector2f VertexToPixel(const VerticeCoordinate& pVertice);
     }
 }
 }

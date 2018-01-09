@@ -53,6 +53,11 @@ IGP2::View::ResourceManager& IGP2::Game::getResourceManager()
     return mResourceManager;
 }
 
+IGP2::Model::ModelManager& IGP2::Game::getModel()
+{
+    return mModel;
+}
+
 void IGP2::Game::pushState(Control::GameState* pState)
 {
     mStates.push(pState);

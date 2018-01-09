@@ -4,6 +4,7 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "src/model/ModelManager.h"
 #include "src/view/ResourceManager.h"
 
 namespace IGP2
@@ -24,6 +25,7 @@ public:
 
     sf::RenderWindow& getWindow();
     View::ResourceManager& getResourceManager();
+    Model::ModelManager& getModel();
 
     void pushState(Control::GameState* pState);
     void popState();
@@ -33,6 +35,7 @@ public:
 private:
     sf::RenderWindow mWindow;
     View::ResourceManager mResourceManager;
+    Model::ModelManager mModel;
 
     std::stack<Control::GameState*> mStates;
 };

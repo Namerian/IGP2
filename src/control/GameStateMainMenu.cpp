@@ -8,6 +8,9 @@ IGP2::Control::GameStateMainMenu::GameStateMainMenu(Game* pGame)
     mView.setSize(pos);
     pos *= 0.5f;
     mView.setCenter(pos);
+
+    mGame->getResourceManager().loadTexture("GFX_test_button", "../media/test_button.png");
+    mGame->getResourceManager().loadFont("font", "../media/font.ttf");
 }
 
 IGP2::Control::GameStateMainMenu::~GameStateMainMenu()

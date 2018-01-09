@@ -49,6 +49,7 @@
         <File Name="src/model/VerticeCoordinate.h"/>
         <File Name="src/model/VerticeDirection.h"/>
         <File Name="src/model/CoordinateUtility.h"/>
+        <File Name="src/model/CoordinateUtility.inl"/>
       </VirtualDirectory>
       <File Name="src/model/Resource.h"/>
       <File Name="src/model/Resource.cpp"/>

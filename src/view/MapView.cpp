@@ -17,9 +17,9 @@ namespace View
         mGridView.initialize(pModel);
     }
 
-    void MapView::draw(sf::RenderWindow& pRenderWindow)
+    void MapView::draw(sf::RenderTarget& pTarget, sf::RenderStates pStates) const
     {
-        mGridView.draw(pRenderWindow);
+        pTarget.draw(mGridView, pStates);
     }
 }
 }

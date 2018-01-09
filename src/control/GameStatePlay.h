@@ -26,8 +26,6 @@ namespace Control
         sf::View mMapView;
         sf::View mGuiView;
 
-        Model::ModelManager mModel;
-
         View::MapView mMap;
     };
 }

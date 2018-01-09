@@ -14,7 +14,7 @@ IGP2::Control::GameStatePlay::GameStatePlay(Game* pGame)
     mGuiView.setCenter(pos);
     mMapView.setCenter(0, 0);
 
-    mMap.initialize(mModel);
+    mMap.initialize(mGame->getModel());
 }
 
 IGP2::Control::GameStatePlay::~GameStatePlay()
@@ -25,6 +25,8 @@ IGP2::Control::GameStatePlay::~GameStatePlay()
 void IGP2::Control::GameStatePlay::draw(const float pDeltaTime)
 {
     mGame->getWindow().setView(mMapView);
+
+    mGame->getWindow().draw(mMap);
 
     mGame->getWindow().setView(mGuiView);
 
