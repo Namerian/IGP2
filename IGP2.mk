@@ -60,8 +60,8 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Game.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_model_Resource.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_model_ModelManager.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_ResourceManager.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_control_GameController.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_control_GameStateMainMenu.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_control_GameStatePlay.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_model_Edge.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_model_Tile.cpp$(ObjectSuffix) \
-	$(IntermediateDirectory)/src_model_Vertice.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_GuiViewManager.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_GuiElementGroup.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_GuiStyle.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_GridView.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_MapView.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_GuiButton.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Game.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_model_Resource.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_model_ModelManager.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_ResourceManager.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_control_GameController.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_control_GameStateMainMenu.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_control_GameStatePlay.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_model_CoordinateUtility.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_model_Edge.cpp$(ObjectSuffix) \
+	$(IntermediateDirectory)/src_model_Tile.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_model_Vertice.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_GuiViewManager.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_GuiElementGroup.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_GuiStyle.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_GridView.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_MapView.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_GuiButton.cpp$(ObjectSuffix) 
 
 
 
@@ -155,6 +155,14 @@ $(IntermediateDirectory)/src_control_GameStatePlay.cpp$(DependSuffix): src/contr
 
 $(IntermediateDirectory)/src_control_GameStatePlay.cpp$(PreprocessSuffix): src/control/GameStatePlay.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_control_GameStatePlay.cpp$(PreprocessSuffix) src/control/GameStatePlay.cpp
+
+$(IntermediateDirectory)/src_model_CoordinateUtility.cpp$(ObjectSuffix): src/model/CoordinateUtility.cpp $(IntermediateDirectory)/src_model_CoordinateUtility.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/media/patrick/GamesDrive/PROGRAMMING/Projects/IGP2/src/model/CoordinateUtility.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_model_CoordinateUtility.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_model_CoordinateUtility.cpp$(DependSuffix): src/model/CoordinateUtility.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_model_CoordinateUtility.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_model_CoordinateUtility.cpp$(DependSuffix) -MM src/model/CoordinateUtility.cpp
+
+$(IntermediateDirectory)/src_model_CoordinateUtility.cpp$(PreprocessSuffix): src/model/CoordinateUtility.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_model_CoordinateUtility.cpp$(PreprocessSuffix) src/model/CoordinateUtility.cpp
 
 $(IntermediateDirectory)/src_model_Edge.cpp$(ObjectSuffix): src/model/Edge.cpp $(IntermediateDirectory)/src_model_Edge.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/media/patrick/GamesDrive/PROGRAMMING/Projects/IGP2/src/model/Edge.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_model_Edge.cpp$(ObjectSuffix) $(IncludePath)

@@ -26,14 +26,12 @@ namespace Model
 
         inline sf::Vector2f GetAxisV()
         {
-            sf::Vector2f result(0, HEX_HEIGHT);
-            return result;
+            return sf::Vector2f(0, HEX_HEIGHT);
         }
 
         inline sf::Vector2f GetAxisU()
         {
-            sf::Vector2f result(0.75f * HEX_WIDTH, -0.5f * HEX_HEIGHT);
-            return result;
+            return sf::Vector2f(0.75f * HEX_WIDTH, -0.5f * HEX_HEIGHT);
         }
 
         //***************************************
