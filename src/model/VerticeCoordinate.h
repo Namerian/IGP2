@@ -10,17 +10,17 @@ namespace Model
     {
     public:
         inline VerticeCoordinate(int pU, int pV, eVerticeDirection pD)
+            : mU(pU)
+            , mV(pV)
+            , mD(pD)
         {
-            mU = pU;
-            mV = pV;
-            mD = pD;
         }
 
-        inline VerticeCoordinate(const AxialCoordinate& pCoord, eVerticeDirection pD)
+        inline VerticeCoordinate(const AxialCoordinate& pAxial, eVerticeDirection pD)
+            : mU(pAxial.GetU())
+            , mV(pAxial.GetV())
+            , mD(pD)
         {
-            mU = pCoord.GetU();
-            mV = pCoord.GetV();
-            mD = pD;
         }
 
         inline int GetU() const
@@ -46,6 +46,11 @@ namespace Model
         inline bool operator!=(const VerticeCoordinate& other) const
         {
             return !(*this == other);
+        }
+
+        inline bool operator<(const VerticeCoordinate& other) const
+        {
+            return (mU < other.GetU() || (mU == other.GetU() && mV < other.GetV()) || (mU == other.GetU() && mV == other.GetV() && mD < other.GetD()));
         }
 
     private:

@@ -14,7 +14,7 @@ IGP2::Control::GameStatePlay::GameStatePlay(Game* pGame)
     mGuiView.setCenter(pos);
     mMapView.setCenter(0, 0);
 
-    mMap.initialize(mGame->getModel());
+    mMap.initialize(mModel);
 }
 
 IGP2::Control::GameStatePlay::~GameStatePlay()
@@ -60,35 +60,31 @@ void IGP2::Control::GameStatePlay::update(const float pDeltaTime)
     mMapView.setCenter(oldPos.x + cameraMovement.x(), oldPos.y + cameraMovement.y());
 }
 
-void IGP2::Control::GameStatePlay::handleInput()
+void IGP2::Control::GameStatePlay::handleEvent(const sf::Event& pEvent)
 {
-    sf::Event event;
+    switch(pEvent.type) {
+    case sf::Event::Closed: {
+        mGame->getWindow().close();
+        break;
+    }
+    case sf::Event::Resized: {
+        // this should not happen!
 
-    while(mGame->getWindow().pollEvent(event)) {
-        switch(event.type) {
-        case sf::Event::Closed: {
+        /*mView.setSize(event.size.width, event.size.height);
+
+        game->background.setPosition(this->game->window.mapPixelToCoords(sf::Vector2i(0, 0)));
+        this->game->background.setScale(
+            float(event.size.width) / float(this->game->background.getTexture()->getSize().x),
+            float(event.size.height) / float(this->game->background.getTexture()->getSize().y));*/
+        break;
+    }
+    case sf::Event::KeyPressed: {
+        if(pEvent.key.code == sf::Keyboard::Escape) {
             mGame->getWindow().close();
-            break;
         }
-        case sf::Event::Resized: {
-            // this should not happen!
-
-            /*mView.setSize(event.size.width, event.size.height);
-
-            game->background.setPosition(this->game->window.mapPixelToCoords(sf::Vector2i(0, 0)));
-            this->game->background.setScale(
-                float(event.size.width) / float(this->game->background.getTexture()->getSize().x),
-                float(event.size.height) / float(this->game->background.getTexture()->getSize().y));*/
-            break;
-        }
-        case sf::Event::KeyPressed: {
-            if(event.key.code == sf::Keyboard::Escape) {
-                mGame->getWindow().close();
-            }
-            break;
-        }
-        default:
-            break;
-        }
+        break;
+    }
+    default:
+        break;
     }
 }

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <functional>
+#include <memory>
 #include <string>
 
 #include <SFML/Graphics.hpp>
@@ -15,17 +17,24 @@ namespace View
     class GuiButton : public GuiElement
     {
     public:
-        GuiButton();
-        GuiButton(std::string pName, sf::Vector2f pPosition, sf::Texture& pTexture, std::string pMessage, sf::Font& pFont);
-        virtual ~GuiButton();
+        typedef std::shared_ptr<GuiButton> Ptr;
+        typedef std::function<void(std::string)> Callback;
 
-        virtual void draw(sf::RenderTarget& pTarget, sf::RenderStates pStates) const;
+    public:
+        GuiButton(std::string pName, sf::Vector2f pPosition, sf::Texture& pTexture, sf::Font& pFont);
 
-        void update(sf::Event& pEvent, sf::RenderWindow& window);
+        void setCallback(Callback pCallback);
+        void setText(const std::string& pText);
+
+        virtual void handleEvent(const sf::Event& pEvent);
 
     private:
-        sf::RectangleShape mShape;
+        virtual void draw(sf::RenderTarget& pTarget, sf::RenderStates pStates) const;
+
+    private:
+        sf::Sprite mSprite;
         sf::Text mText;
+        Callback mCallback;
     };
 }
 }

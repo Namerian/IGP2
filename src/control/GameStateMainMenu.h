@@ -18,7 +18,7 @@ namespace Control
 
         virtual void draw(const float pDeltaTime);
         virtual void update(const float pDeltaTime);
-        virtual void handleInput();
+        virtual void handleEvent(const sf::Event& pEvent);
 
     private:
         sf::View mView;

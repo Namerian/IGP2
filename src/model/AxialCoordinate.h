@@ -11,15 +11,15 @@ namespace Model
         inline AxialCoordinate(){};
 
         inline AxialCoordinate(int pU, int pV)
+            : mU(pU)
+            , mV(pV)
         {
-            mU = pU;
-            mV = pV;
         }
 
         inline AxialCoordinate(const AxialCoordinate& pAxial)
+            : mU(pAxial.GetU())
+            , mV(pAxial.GetV())
         {
-            mU = pAxial.GetU();
-            mV = pAxial.GetV();
         }
 
         inline int GetU() const
@@ -51,7 +51,7 @@ namespace Model
         int mU, mV;
     };
 
-    struct AxialCoordinateComp {
+    struct AxialCoordinateComparison {
         bool operator()(const AxialCoordinate& lhs, const AxialCoordinate& rhs) const
         {
             return (lhs.GetU() < rhs.GetU()) || (lhs.GetU() == rhs.GetU() && lhs.GetV() < rhs.GetV());

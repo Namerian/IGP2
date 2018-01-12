@@ -1,10 +1,14 @@
 #pragma once
 
+#include <memory>
 #include <string>
 
 #include <SFML/Graphics/Drawable.hpp>
-#include <SFML/Graphics/RenderStates.hpp>
-#include <SFML/Graphics/RenderTarget.hpp>
+#include <SFML/Graphics/Transformable.hpp>
+#include <SFML/System/NonCopyable.hpp>
+
+//#include <SFML/Graphics/RenderStates.hpp>
+//#include <SFML/Graphics/RenderTarget.hpp>
 
 #include "src/view/GuiElementType.h"
 
@@ -14,14 +18,13 @@ namespace IGP2
 namespace View
 {
 
-    class GuiElement : public sf::Drawable
+    class GuiElement : public sf::Drawable, public sf::Transformable, private sf::NonCopyable
     {
     public:
-        GuiElement(){};
+        typedef std::shared_ptr<GuiElement> Ptr;
 
-        virtual ~GuiElement(){};
-
-        virtual void draw(sf::RenderTarget& pTarget, sf::RenderStates pStates) const = 0;
+    public:
+        virtual void handleEvent(const sf::Event& pEvent) = 0;
 
         inline std::string getName()
         {
@@ -31,6 +34,13 @@ namespace View
         inline eGuiElementType getType()
         {
             return mType;
+        }
+
+    protected:
+        inline GuiElement(std::string pName, eGuiElementType pType)
+            : mName(pName)
+            , mType(pType)
+        {
         }
 
     protected:

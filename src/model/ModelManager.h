@@ -27,8 +27,8 @@ namespace Model
         void CreateResource(const AxialCoordinate& pPosition, eResourceType pType, int pAmount);
 
     private:
-        std::set<AxialCoordinate, AxialCoordinateComp> mTileCoordinateSet;
-        std::set<EdgeCoordinate, EdgeCoordinateComp> mEdgeCoordSet;
+        std::set<AxialCoordinate, AxialCoordinateComparison> mTileCoordinateSet;
+        std::set<EdgeCoordinate, EdgeCoordinateComparison> mEdgeCoordSet;
         std::set<VerticeCoordinate, VertexCoordinateComp> mVertexCoordSet;
 
         std::map<AxialCoordinate, Tile> mTileMap;

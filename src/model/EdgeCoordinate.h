@@ -13,17 +13,17 @@ namespace Model
     {
     public:
         inline EdgeCoordinate(int pU, int pV, eEdgeDirection pD)
+            : mU(pU)
+            , mV(pV)
+            , mD(pD)
         {
-            mU = pU;
-            mV = pV;
-            mD = pD;
         }
 
         inline EdgeCoordinate(const AxialCoordinate& pCoord, eEdgeDirection pD)
+            : mU(pCoord.GetU())
+            , mV(pCoord.GetV())
+            , mD(pD)
         {
-            mU = pCoord.GetU();
-            mV = pCoord.GetV();
-            mD = pD;
         }
 
         inline int GetU() const
@@ -51,12 +51,17 @@ namespace Model
             return !(*this == other);
         }
 
+        inline bool operator<(const EdgeCoordinate& other) const
+        {
+            return (mU < other.GetU() || (mU == other.GetU() && mV < other.GetV()) || (mU == other.GetU() && mV == other.GetV() && mD < other.GetD()));
+        }
+
     private:
         int mU, mV;
         eEdgeDirection mD;
     };
 
-    struct EdgeCoordinateComp {
+    struct EdgeCoordinateComparison {
         bool operator()(const EdgeCoordinate& lhs, const EdgeCoordinate& rhs) const
         {
             if(lhs.GetU() < rhs.GetU()) {

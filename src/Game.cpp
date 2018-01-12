@@ -31,7 +31,14 @@ void IGP2::Game::gameloop()
             continue;
         }
 
-        peekState()->handleInput();
+        // events
+        sf::Event event;
+
+        while(mWindow.pollEvent(event)) {
+            peekState()->handleEvent(event);
+        }
+
+        // update
         peekState()->update(deltaTime);
 
         // rendering
@@ -48,14 +55,14 @@ sf::RenderWindow& IGP2::Game::getWindow()
     return mWindow;
 }
 
-IGP2::View::ResourceManager& IGP2::Game::getResourceManager()
+IGP2::View::TextureHolder& IGP2::Game::getTextureHolder()
 {
-    return mResourceManager;
+    return mTextureHolder;
 }
 
-IGP2::Model::ModelManager& IGP2::Game::getModel()
+IGP2::View::FontHolder& IGP2::Game::getFontHolder()
 {
-    return mModel;
+    return mFontHolder;
 }
 
 void IGP2::Game::pushState(Control::GameState* pState)

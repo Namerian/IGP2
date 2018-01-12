@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Patrick Monville
-Date                   :=09/01/18
+Date                   :=12/01/18
 CodeLitePath           :=/home/patrick/.codelite
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
@@ -60,8 +60,9 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Game.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_model_Resource.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_model_ModelManager.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_ResourceManager.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_control_GameController.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_control_GameStateMainMenu.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_control_GameStatePlay.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_model_CoordinateUtility.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_model_Edge.cpp$(ObjectSuffix) \
-	$(IntermediateDirectory)/src_model_Tile.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_model_Vertice.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_GuiViewManager.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_GuiElementGroup.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_GuiStyle.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_GridView.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_MapView.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_GuiButton.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Game.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_model_Resource.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_model_ModelManager.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_ResourceManager.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_control_GameController.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_control_GameStateMainMenu.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_control_GameStatePlay.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_model_Edge.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_model_Tile.cpp$(ObjectSuffix) \
+	$(IntermediateDirectory)/src_model_Vertice.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_GuiViewManager.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_GuiElementGroup.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_GuiStyle.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_GridView.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_MapView.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_GuiButton.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_GuiLabel.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_GuiContainerWindow.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_view_GuiContainer.cpp$(ObjectSuffix) \
+	
 
 
 
@@ -156,14 +157,6 @@ $(IntermediateDirectory)/src_control_GameStatePlay.cpp$(DependSuffix): src/contr
 $(IntermediateDirectory)/src_control_GameStatePlay.cpp$(PreprocessSuffix): src/control/GameStatePlay.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_control_GameStatePlay.cpp$(PreprocessSuffix) src/control/GameStatePlay.cpp
 
-$(IntermediateDirectory)/src_model_CoordinateUtility.cpp$(ObjectSuffix): src/model/CoordinateUtility.cpp $(IntermediateDirectory)/src_model_CoordinateUtility.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/media/patrick/GamesDrive/PROGRAMMING/Projects/IGP2/src/model/CoordinateUtility.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_model_CoordinateUtility.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/src_model_CoordinateUtility.cpp$(DependSuffix): src/model/CoordinateUtility.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_model_CoordinateUtility.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_model_CoordinateUtility.cpp$(DependSuffix) -MM src/model/CoordinateUtility.cpp
-
-$(IntermediateDirectory)/src_model_CoordinateUtility.cpp$(PreprocessSuffix): src/model/CoordinateUtility.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_model_CoordinateUtility.cpp$(PreprocessSuffix) src/model/CoordinateUtility.cpp
-
 $(IntermediateDirectory)/src_model_Edge.cpp$(ObjectSuffix): src/model/Edge.cpp $(IntermediateDirectory)/src_model_Edge.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/media/patrick/GamesDrive/PROGRAMMING/Projects/IGP2/src/model/Edge.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_model_Edge.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/src_model_Edge.cpp$(DependSuffix): src/model/Edge.cpp
@@ -235,6 +228,30 @@ $(IntermediateDirectory)/src_view_GuiButton.cpp$(DependSuffix): src/view/GuiButt
 
 $(IntermediateDirectory)/src_view_GuiButton.cpp$(PreprocessSuffix): src/view/GuiButton.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_view_GuiButton.cpp$(PreprocessSuffix) src/view/GuiButton.cpp
+
+$(IntermediateDirectory)/src_view_GuiLabel.cpp$(ObjectSuffix): src/view/GuiLabel.cpp $(IntermediateDirectory)/src_view_GuiLabel.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/media/patrick/GamesDrive/PROGRAMMING/Projects/IGP2/src/view/GuiLabel.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_view_GuiLabel.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_view_GuiLabel.cpp$(DependSuffix): src/view/GuiLabel.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_view_GuiLabel.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_view_GuiLabel.cpp$(DependSuffix) -MM src/view/GuiLabel.cpp
+
+$(IntermediateDirectory)/src_view_GuiLabel.cpp$(PreprocessSuffix): src/view/GuiLabel.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_view_GuiLabel.cpp$(PreprocessSuffix) src/view/GuiLabel.cpp
+
+$(IntermediateDirectory)/src_view_GuiContainerWindow.cpp$(ObjectSuffix): src/view/GuiContainerWindow.cpp $(IntermediateDirectory)/src_view_GuiContainerWindow.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/media/patrick/GamesDrive/PROGRAMMING/Projects/IGP2/src/view/GuiContainerWindow.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_view_GuiContainerWindow.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_view_GuiContainerWindow.cpp$(DependSuffix): src/view/GuiContainerWindow.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_view_GuiContainerWindow.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_view_GuiContainerWindow.cpp$(DependSuffix) -MM src/view/GuiContainerWindow.cpp
+
+$(IntermediateDirectory)/src_view_GuiContainerWindow.cpp$(PreprocessSuffix): src/view/GuiContainerWindow.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_view_GuiContainerWindow.cpp$(PreprocessSuffix) src/view/GuiContainerWindow.cpp
+
+$(IntermediateDirectory)/src_view_GuiContainer.cpp$(ObjectSuffix): src/view/GuiContainer.cpp $(IntermediateDirectory)/src_view_GuiContainer.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/media/patrick/GamesDrive/PROGRAMMING/Projects/IGP2/src/view/GuiContainer.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_view_GuiContainer.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_view_GuiContainer.cpp$(DependSuffix): src/view/GuiContainer.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_view_GuiContainer.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_view_GuiContainer.cpp$(DependSuffix) -MM src/view/GuiContainer.cpp
+
+$(IntermediateDirectory)/src_view_GuiContainer.cpp$(PreprocessSuffix): src/view/GuiContainer.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_view_GuiContainer.cpp$(PreprocessSuffix) src/view/GuiContainer.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

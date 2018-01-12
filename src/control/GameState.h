@@ -15,7 +15,7 @@ namespace Control
 
         virtual void draw(const float pDeltaTime) = 0;
         virtual void update(const float pDeltaTime) = 0;
-        virtual void handleInput() = 0;
+        virtual void handleEvent(const sf::Event& pEvent) = 0;
 
     protected:
         Game* mGame;

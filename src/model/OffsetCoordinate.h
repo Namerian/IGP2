@@ -8,9 +8,15 @@ namespace Model
     {
     public:
         inline OffsetCoordinate(int pCol, int pRow)
+            : mCol(pCol)
+            , mRow(pRow)
         {
-            mCol = pCol;
-            mRow = pRow;
+        }
+
+        inline OffsetCoordinate(const OffsetCoordinate& pOffset)
+            : mCol(pOffset.GetCol())
+            , mRow(pOffset.GetRow())
+        {
         }
 
         inline int GetCol() const
@@ -21,6 +27,21 @@ namespace Model
         inline int GetRow() const
         {
             return mRow;
+        }
+
+        inline bool operator==(const OffsetCoordinate& other) const
+        {
+            return (mCol == other.GetCol() && mRow == other.GetRow());
+        }
+
+        inline bool operator!=(const OffsetCoordinate& other) const
+        {
+            return !(*this == other);
+        }
+
+        inline bool operator<(const OffsetCoordinate& other) const
+        {
+            return (mCol < other.GetCol() || (mCol == other.GetCol() && mRow < other.GetRow()));
         }
 
     private:

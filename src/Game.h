@@ -5,7 +5,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "src/model/ModelManager.h"
-#include "src/view/ResourceManager.h"
+#include "src/view/ResourceHolder.h"
 
 namespace IGP2
 {
@@ -24,8 +24,9 @@ public:
     void gameloop();
 
     sf::RenderWindow& getWindow();
-    View::ResourceManager& getResourceManager();
-    Model::ModelManager& getModel();
+
+    View::TextureHolder& getTextureHolder();
+    View::FontHolder& getFontHolder();
 
     void pushState(Control::GameState* pState);
     void popState();
@@ -34,8 +35,9 @@ public:
 
 private:
     sf::RenderWindow mWindow;
-    View::ResourceManager mResourceManager;
-    Model::ModelManager mModel;
+
+    View::TextureHolder mTextureHolder;
+    View::FontHolder mFontHolder;
 
     std::stack<Control::GameState*> mStates;
 };

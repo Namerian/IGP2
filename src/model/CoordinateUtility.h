@@ -36,21 +36,23 @@ namespace Model
 
         //***************************************
 
-        AxialCoordinate CubeToAxial(const CubeCoordinate& pCube);
+        inline AxialCoordinate CubeToAxial(const CubeCoordinate& pCube);
 
-        CubeCoordinate AxialToCube(const AxialCoordinate& pAxial);
+        inline CubeCoordinate AxialToCube(const AxialCoordinate& pAxial);
 
-        OffsetCoordinate CubeToOffset(const CubeCoordinate& pCube);
+        inline OffsetCoordinate CubeToOffset(const CubeCoordinate& pCube);
 
-        CubeCoordinate OffsetToCube(const OffsetCoordinate& pOffset);
+        inline CubeCoordinate OffsetToCube(const OffsetCoordinate& pOffset);
 
-        AxialCoordinate OffsetToAxial(const OffsetCoordinate& pOffset);
+        inline AxialCoordinate OffsetToAxial(const OffsetCoordinate& pOffset);
 
-        OffsetCoordinate AxialToOffset(const AxialCoordinate& pAxial);
+        inline OffsetCoordinate AxialToOffset(const AxialCoordinate& pAxial);
 
-        sf::Vector2f AxialToPixel(const AxialCoordinate& pAxial);
+        inline sf::Vector2f AxialToPixel(const AxialCoordinate& pAxial);
 
-        sf::Vector2f VertexToPixel(const VerticeCoordinate& pVertice);
+        inline sf::Vector2f VertexToPixel(const VerticeCoordinate& pVertice);
     }
 }
 }
+
+#include "src/model/CoordinateUtility.inl"

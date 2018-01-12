@@ -9,8 +9,8 @@ IGP2::Control::GameStateMainMenu::GameStateMainMenu(Game* pGame)
     pos *= 0.5f;
     mView.setCenter(pos);
 
-    mGame->getResourceManager().loadTexture("GFX_test_button", "../media/test_button.png");
-    mGame->getResourceManager().loadFont("font", "../media/font.ttf");
+    mGame->getTextureHolder().load("GFX_test_button", "../media/test_button.png");
+    mGame->getFontHolder().load("font", "../media/font.ttf");
 }
 
 IGP2::Control::GameStateMainMenu::~GameStateMainMenu()
@@ -29,35 +29,24 @@ void IGP2::Control::GameStateMainMenu::update(const float pDeltaTime)
 {
 }
 
-void IGP2::Control::GameStateMainMenu::handleInput()
+void IGP2::Control::GameStateMainMenu::handleEvent(const sf::Event& pEvent)
 {
-    sf::Event event;
-
-    while(mGame->getWindow().pollEvent(event)) {
-        switch(event.type) {
-        case sf::Event::Closed: {
+    switch(pEvent.type) {
+    case sf::Event::Closed: {
+        mGame->getWindow().close();
+        break;
+    }
+    case sf::Event::Resized: {
+        // this should not happen!
+        break;
+    }
+    case sf::Event::KeyPressed: {
+        if(pEvent.key.code == sf::Keyboard::Escape) {
             mGame->getWindow().close();
-            break;
         }
-        case sf::Event::Resized: {
-            // this should not happen!
-
-            /*mView.setSize(event.size.width, event.size.height);
-
-            game->background.setPosition(this->game->window.mapPixelToCoords(sf::Vector2i(0, 0)));
-            this->game->background.setScale(
-                float(event.size.width) / float(this->game->background.getTexture()->getSize().x),
-                float(event.size.height) / float(this->game->background.getTexture()->getSize().y));*/
-            break;
-        }
-        case sf::Event::KeyPressed: {
-            if(event.key.code == sf::Keyboard::Escape) {
-                mGame->getWindow().close();
-            }
-            break;
-        }
-        default:
-            break;
-        }
+        break;
+    }
+    default:
+        break;
     }
 }
